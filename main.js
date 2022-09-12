@@ -32,6 +32,67 @@ var futSentStarts =['Se ', 'Quando ']
 var preferencesResults=[];
 var verbSelected = document.getElementById('verbSelected');
 
+//OBJECTS
+
+var allInfinitives = {
+ imperfect:
+ imperfectIrregular:
+ imperfectMombo:
+ present:
+ presentIrregular:
+ presentMombo:
+ future:
+ futureIrregular:
+ futureMombo:
+}
+
+var subjunctiveImperfect = {
+  one:
+  two:
+  three:
+  all:
+  irregularOne:
+  irregularTwo:
+  irregularThree:
+  irregularAll:
+  momboOne:
+  momboTwo:
+  momboThree:
+  momboAll:
+
+}
+
+var subjunctivePresent = {
+  one:
+  two:
+  three:
+  all:
+  irregularOne:
+  irregularTwo:
+  irregularThree:
+  irregularAll:
+  momboOne:
+  momboTwo:
+  momboThree:
+  momboAll:
+}
+
+var subjunctiveFuture = {
+  one:
+  two:
+  three:
+  all:
+  irregularOne:
+  irregularTwo:
+  irregularThree:
+  irregularAll:
+  momboOne:
+  momboTwo:
+  momboThree:
+  momboAll:
+}
+
+
 
 
 // create mombo array for infinitives 
@@ -652,3 +713,7 @@ function changeCheatSheetToFuture(){
 firstTenseButton.addEventListener('click', changeCheatSheetToImperfect);
 middleTenseButton.addEventListener('click', changeCheatSheetToPresent);
 lastTenseButton.addEventListener('click', changeCheatSheetToFuture);
+
+
+console.log('hello')
+// im making a change here to show theres something to commit
