@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/78d30c36e1.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="file:///Users/jackmullinkosson/Desktop/DEV 30/Learn Javascript/styles.css" />
+    <title>Verb Conjugator</title>
+</head>
+
+<body>
+    <p class='title'>Verb Conjugator</p>
+    <p id='demo'>Fill out the sentence below to practice</p>
+    <h3 id='verbSelected'>Verb tense: subjunctive imperfect</h3>
+    <section>
+    <div id="box-left" class="box side">
+        <button id="sidebar-button-left" class="sidebar-button">Settings <br>˅</button>
+        <div id="sidebar-left" class="sidebar">
+            <h4><i>Tenses</i></h4>
+            <label>
+            <input type="radio" name="tenseAnswer" value="imperfect">
+            Imperfect only</label>
+            <label>
+                <br>
+            <input type="radio" name="tenseAnswer" checked value="present">
+            Present only (default)</label>
+            <br>
+            <label>
+            <input type="radio" name="tenseAnswer" value="future">
+            Future only</label>
+            <br>
+            <h4><i>Verbs</i></h4>
+            <label>
+            <input type="radio" name="verbAnswer" value="irregular">
+            Irregular only</label>
+            <label>
+                <br>
+            <input type="radio" name="verbAnswer" value="regular">
+            Regular only </label>
+            <label>
+                <br>
+            <input type="radio" name="verbAnswer" checked value="both">
+            Both (default)</label>
+            <h4><i>Pronouns</i></h4>
+            <label>
+            <input type="radio" name="pronounAnswer" value="firstPerson">
+            Eu/você/ele/ela only</label>
+            <label>
+                <br>
+            <input type="radio" name="pronounAnswer" value="secondPerson">
+            Vocês/eles/elas only </label>
+            <label>
+                <br>
+            <input type="radio" name="pronounAnswer" value="thirdPerson">
+           Nós only</label>
+            <br>
+            <label>
+            <input type="radio" name="pronounAnswer" checked value="allPersons">
+            All (default)</label>
+            <br><br>
+            <input id="preferencesSubmitButton" type="submit">
+    </div>
+    </div>
+    <div class="box middle">
+        <p id="sent-one">Eu quero que você</p>
+        <label for="verb" id="infinitive">ser</label>
+        <input id="response"type="text" name="verb">
+        <br>
+        <button class="game-button"id="submitButton">Submit (Enter)</button>
+        <p id="msg"></p>
+        <button class="game-button"id="playAgain">Go Again (Space)</button>
+    </div>
+    <div class="box side box-right">
+        <button id="cheat-sheet-button" class="sidebar-button">Cheat sheet <br>˅</button>
+        <div id="sidebar-right">
+            <div id="responsive-buttons">
+            <button id="first-tense-button" class="tense-button">Imperfect</button>
+            <button id="middle-tense-button" class="tense-button active">Present</button>
+            <button id="last-tense-button" class="tense-button">Future</button>
+            </div>
+            <div id="cheat-sheet-present">
+                <p class="cheat-sheet-text">For regular verbs, the subjunctive <b>present</b> is conjugated by removing the last two letters and adding the following endings. </p>
+                <div class="grid">
+                    <div class="grid-item cl-left-top"></div>
+                    <div class="grid-item cl-mid grid-head">-ar verbs</div>
+                    <div class="grid-item grid-head">-ir/-er verbs</div>
+                    <div class="grid-item cl-left">Eu/Você/Ele/Ela</div>
+                    <div class="grid-item row cl-mid">-e</div>
+                    <div class="grid-item row">-a</div>
+                    <div class="grid-item cl-left">Vocês/Eles/Elas</div>
+                    <div class="grid-item row cl-mid">-em</div>
+                    <div class="grid-item row">-am</div>
+                    <div class="grid-item cl-left">Nós</div>
+                    <div class="grid-item row cl-mid">-emos</div>
+                    <div class="grid-item row">-amos</div>
+                </div>
+            </div>
+           <div id="cheat-sheet-imperfect">
+                <p class="cheat-sheet-text">For regular verbs, the subjunctive <b>imperfect</b> is conjugated by removing the last two letters and adding the following endings.</p>
+                <div id="imperfect-grid" class="grid">
+                    <div class="grid-item cl-left-top"></div>
+                    <div class="grid-item cl-mid grid-head">-ar verbs</div>
+                    <div class="grid-item grid-head cl-mid">-ir verbs</div>
+                    <div class="grid-item grid-head">-er verbs</div>
+                    <div class="grid-item cl-left">Eu/Você/Ele/Ela</div>
+                    <div class="grid-item row cl-mid">-asse</div>
+                    <div class="grid-item row cl-mid">-isse</div>
+                    <div class="grid-item row">-esse</div>
+                    <div class="grid-item cl-left">Vocês/Eles/Elas</div>
+                    <div class="grid-item row cl-mid">-assem</div>
+                    <div class="grid-item row cl-mid">-issem</div>
+                    <div class="grid-item row">-essem</div>
+                    <div class="grid-item cl-left">Nós</div>
+                    <div class="grid-item row cl-mid">-ássemos</div>
+                    <div class="grid-item row cl-mid">-íssemos</div>
+                    <div class="grid-item row">-êssemos</div>
+                </div>
+            </div>
+            <div id="cheat-sheet-future">
+                <p class="cheat-sheet-text">For regular verbs, the subjunctive <b>future</b> is conjugated by adding the following endings onto the infinitive.</p>
+                <div class="grid">
+                    <div class="grid-item cl-left-top"></div>
+                    <div class="grid-item cl-mid grid-head">-ar verbs</div>
+                    <div class="grid-item grid-head">-ir/-er verbs</div>
+                    <div class="grid-item cl-left">Eu/Você/Ele/Ela</div>
+                    <div class="grid-item row cl-mid">-</div>
+                    <div class="grid-item row">-</div>
+                    <div class="grid-item cl-left">Vocês/Eles/Elas</div>
+                    <div class="grid-item row cl-mid">-em</div>
+                    <div class="grid-item row">-em</div>
+                    <div class="grid-item cl-left">Nós</div>
+                    <div class="grid-item row cl-mid">-mos</div>
+                    <div class="grid-item row">-mos</div>
+                </div>
+             </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+</div>
+    <script src="/Users/jackmullinkosson/Desktop/DEV 30/Learn Javascript/main.js"></script>
+
+</body>
+
+</html>
