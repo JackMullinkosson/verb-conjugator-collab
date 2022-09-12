@@ -51,52 +51,89 @@ allInfinitives.presentMombo = allInfinitives.present.concat(allInfinitives.prese
 allInfinitives.futureMombo = allInfinitives.future.concat(allInfinitives.futureIrregular);
 
 
+//imperfect object
 var subjunctiveImperfect = {
-  one:
-  two:
-  three:
-  all:
-  irregularOne:
-  irregularTwo:
-  irregularThree:
-  irregularAll:
-  momboOne:
-  momboTwo:
-  momboThree:
-  momboAll:
+  one: [], 
+  two: [], 
+  three: [], 
+  all: [], 
+  irregularOne: ['fosse', 'estivesse', 'fosse', 'desse', 'dissesse', 'fizesse', 'trouxesse', 'pudesse', 'tivesse', 'viesse', 'pusesse', 'visse', 'soubesse', 'quisesse', 'coubesse', 'houvesse'],
+  irregularTwo: [], 
+  irregularThree: [], 
+  irregularAll: [], 
+  momboOne: [], 
+  momboTwo: [], 
+  momboThree: [], 
+  momboAll: [], 
 
 }
+//conjugate regular imperfect verbs
 
+
+//present object
 var subjunctivePresent = {
-  one:
-  two:
-  three:
-  all:
-  irregularOne:
-  irregularTwo:
-  irregularThree:
-  irregularAll:
-  momboOne:
-  momboTwo:
-  momboThree:
-  momboAll:
+  one: [], 
+  two: [], 
+  three: [], 
+  all: [], 
+  irregularOne: ['seja', 'fique', 'esteja', 'vá', 'dê', 'diga', 'faça', 'traga', 'possa', 'tenha', 'venha', 'ponha', 'leia', 'veja', 'saiba', 'queira', 'caiba', 'durma', 'fuja', 'ouça', 'peça', 'meça', 'perca', 'siga', 'sirva', 'sinta', 'haja', 'caia', 'saia', 'ria', 'valha', 'requeira', 'creia'], 
+  irregularTwo: [], 
+  irregularThree: [], 
+  irregularAll: [], 
+  momboOne: [], 
+  momboTwo: [], 
+  momboThree: [], 
+  momboAll: [], 
 }
 
+//conjugate regular present verbs
+for (let i = 0; i < allInfinitives.present.length; i++) {
+  if(allInfinitives.present[i][allInfinitives.present[i].length-3]==='a'){
+    allInfinitives.present[i] = allInfinitives.present[i].slice(1,allInfinitives.present[i].length-3);
+    allInfinitives.present[i] += 'e'
+  }
+  subjunctivePresent.one = allInfinitives.present; 
+//  else if(regInfinitive[i][regInfinitive[i].length-3]==='e'||regInfinitive[i][regInfinitive[i].length-3]==='i'){
+// regInfinitive[i] = regInfinitive[i].slice(1,regInfinitive[i].length-3);
+// regInfinitive[i] += 'a'
+//  }
+ 
+}
+console.log(subjunctivePresent.one);
+console.log(allInfinitives.present)
+// Vocês
+// for (let i = 0; i < regInfinitive.length; i++) {
+// regInfinitive[i] += 'm'
+// subjunctivePresent.two = 
+// }
+// // Nós
+// for (let i = 0; i < regInfinitive.length; i++) {
+// regInfinitive[i] += 'os'
+// subjunctivePresent.three = 
+// }
+
+
+//future object
 var subjunctiveFuture = {
-  one:
-  two:
-  three:
-  all:
-  irregularOne:
-  irregularTwo:
-  irregularThree:
-  irregularAll:
-  momboOne:
-  momboTwo:
-  momboThree:
-  momboAll:
+  one: [], 
+  two: [], 
+  three: [], 
+  all: [], 
+  irregularOne: ['for', 'estiver', 'for', 'der', 'disser', 'fizer', 'trouxer', 'puder', 'tiver', 'vier', 'puser', 'vir', 'souber', 'quiser', 'couber', 'houver'],
+  irregularTwo: [], 
+  irregularThree: [], 
+  irregularAll: [], 
+  momboOne: [], 
+  momboTwo: [], 
+  momboThree: [], 
+  momboAll: [], 
 }
+//conjugate regular future verbs
 
+
+
+
+//everything below here is old code to be refactored
 
 
 
