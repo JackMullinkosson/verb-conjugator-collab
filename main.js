@@ -1,21 +1,6 @@
 var desireVerb = ['Quero', 'Desejo', 'Espero', 'Duvido', 'Rezo', 'Pode ser', 'É possível', 'É preciso', 'É necessário', 'É provável', 'Oxala', 'Tomara', 'Prefiro', 'Para', 'A menos', 'Desde', 'É sufficiente','Receio'];
-var infinitive = ['(ser)', '(ficar)', '(estar)', '(ir)', '(dar)', '(dizer)', '(fazer)', '(trazer)', '(poder)', '(ter)', '(vir)', '(pôr)', '(ler)', '(ver)', '(saber)', '(querer)', '(caber)', '(dormir)', '(fugir)', '(ouvir)', '(pedir)', '(medir)', '(perder)', '(seguir)', '(servir)', '(sentir)', '(haver)', '(cair)', '(sair)', '(rir)', '(valer)', '(requerer)', '(crer)'];
-var impIrregInf = ['(ser)', '(estar)', '(ir)', '(dar)', '(dizer)', '(fazer)', '(trazer)', '(poder)', '(ter)', '(vir)', '(pôr)', '(ver)', '(saber)', '(querer)', '(caber)', '(haver)'];
-var impSubj = ['fosse', 'estivesse', 'fosse', 'desse', 'dissesse', 'fizesse', 'trouxesse', 'pudesse', 'tivesse', 'viesse', 'pusesse', 'visse', 'soubesse', 'quisesse', 'coubesse', 'houvesse'];
-var impSpareArray = ['fosse', 'estivesse', 'fosse', 'desse', 'dissesse', 'fizesse', 'trouxesse', 'pudesse', 'tivesse', 'viesse', 'pusesse', 'visse', 'soubesse', 'quisesse', 'coubesse', 'houvesse'];
-var futSubj = ['for', 'estiver', 'for', 'der', 'disser', 'fizer', 'trouxer', 'puder', 'tiver', 'vier', 'puser', 'vir', 'souber', 'quiser', 'couber', 'houver'];
-var futSpareArray = ['for', 'estiver', 'for', 'der', 'disser', 'fizer', 'trouxer', 'puder', 'tiver', 'vier', 'puser', 'vir', 'souber', 'quiser', 'couber', 'houver'];
-var regInfinitiveUnconjugated = ['(comer)', '(matar)', '(iludir)', '(falar)', '(amar)', '(beber)', '(cantar)', '(comprar)', '(estudar)', '(vender)', '(viver)', '(achar)', '(acabar)', '(andar)', '(chamar)', '(encontrar)', '(morar)', '(morrer)', '(pensar)', '(olhar)', '(tomar)', '(voltar)', '(deixar)', '(levar)', '(dever)', '(existir)', '(receber)', '(trabalhar)', '(decidir)', '(fechar)', '(mandar)', '(perceber)', '(gostar)', '(usar)', '(esperar)', '(correr)', '(mostrar)', '(escrever)', '(abrir)', '(precisar)'];
-var regInfinitive = ['(comer)', '(matar)', '(iludir)', '(falar)', '(amar)', '(beber)', '(cantar)', '(comprar)', '(estudar)', '(vender)', '(viver)', '(achar)', '(acabar)', '(andar)', '(chamar)', '(encontrar)', '(morar)', '(morrer)', '(pensar)', '(olhar)', '(tomar)', '(voltar)', '(deixar)', '(levar)', '(dever)', '(existir)', '(receber)', '(trabalhar)', '(decidir)', '(fechar)', '(mandar)', '(perceber)', '(gostar)', '(usar)', '(esperar)', '(correr)', '(mostrar)', '(escrever)', '(abrir)', '(precisar)'];
-var regInfImp = ['(comer)', '(matar)', '(iludir)', '(falar)', '(amar)', '(beber)', '(cantar)', '(comprar)', '(estudar)', '(vender)', '(viver)', '(achar)', '(acabar)', '(andar)', '(chamar)', '(encontrar)', '(morar)', '(morrer)', '(pensar)', '(olhar)', '(tomar)', '(voltar)', '(deixar)', '(levar)', '(dever)', '(existir)', '(receber)', '(trabalhar)', '(decidir)', '(fechar)', '(mandar)', '(perceber)', '(gostar)', '(usar)', '(esperar)', '(correr)', '(mostrar)', '(escrever)', '(abrir)', '(precisar)'];
-var regFutInf = ['(comer)', '(matar)', '(iludir)', '(falar)', '(amar)', '(beber)', '(cantar)', '(comprar)', '(estudar)', '(vender)', '(viver)', '(achar)', '(acabar)', '(andar)', '(chamar)', '(encontrar)', '(morar)', '(morrer)', '(pensar)', '(olhar)', '(tomar)', '(voltar)', '(deixar)', '(levar)', '(dever)', '(existir)', '(receber)', '(trabalhar)', '(decidir)', '(fechar)', '(mandar)', '(perceber)', '(gostar)', '(usar)', '(esperar)', '(correr)', '(mostrar)', '(escrever)', '(abrir)', '(precisar)'];
-var subj = ['seja', 'fique', 'esteja', 'vá', 'dê', 'diga', 'faça', 'traga', 'possa', 'tenha', 'venha', 'ponha', 'leia', 'veja', 'saiba', 'queira', 'caiba', 'durma', 'fuja', 'ouça', 'peça', 'meça', 'perca', 'siga', 'sirva', 'sinta', 'haja', 'caia', 'saia', 'ria', 'valha', 'requeira', 'creia']
-var subjTwo=['sejam','fiquem','estejam', 'vão', 'dêem', 'digam', 'façam', 'tragam', 'possam', 'tenham', 'venham', 'ponham', 'leiam', 'vejam', 'saibam', 'queiram', 'caibam', 'durmam', 'fujam', 'ouçam', 'peçam', 'meçam', 'percam', 'sigam', 'sirvam', 'sintam', 'hajam', 'caiam', 'saiam', 'riam', 'valham', 'requeiram', 'creiam']
-var subjThree=['sejamos', 'fiquemos', 'estejamos', 'vamos', 'dêmos', 'digamos', 'façamos', 'tragamos', 'possamos', 'tenhamos', 'venhamos', 'ponhamos', 'leiamos', 'vejamos', 'saibamos', 'queiramos', 'caibamos', 'durmamos', 'fujamos', 'ouçamos', 'peçamos', 'meçamos', 'percamos', 'sigamos', 'sirvamos', 'sintamos', 'hajamos', 'caiamos', 'saiamos', 'riamos', 'valhamos', 'requeiramos', 'creiamos']
 var pronoun = ['eu', 'você', 'ela', 'ele', 'a gente', 'vocês', 'eles', 'elas','nós']
 var randomDesire=Math.floor(Math.random()*desireVerb.length);
-var randomVerb=Math.floor(Math.random()*infinitive.length);
-var randomRegVerb=Math.floor(Math.random()*regInfinitive.length);
 var randomPronoun=Math.floor(Math.random()*pronoun.length);
 var infinitiveText = document.getElementById('infinitive');
 var input=document.getElementById('response');
@@ -47,12 +32,14 @@ secondIrregImp: {
   regularity: 'irregular',
   tense: 'imperfect',
   conjugated: [],
+  infinitive: [],
 },
 thirdIrregImp: {
   pronoun: 'thirdPerson',
   regularity: 'irregular',
   tense: 'imperfect',
   conjugated: [],
+  infinitive: [],
 },
 firstRegImp: {
   pronoun: 'firstPerson',
@@ -66,15 +53,167 @@ secondRegImp: {
   regularity: 'regular',
   tense: 'imperfect',
   conjugated: [],
+  infinitive: [],
 },
 thirdRegImp: {
   pronoun: 'thirdPerson',
   regularity: 'regular',
   tense: 'imperfect',
   conjugated: [],
+  infinitive: [],
+},
+firstBothImp: {
+  pronoun: 'firstPerson',
+  regularity: 'both',
+  tense: 'imperfect',
+  conjugated: [],
+  infinitive: [],
+},
+secondBothImp: {
+  pronoun: 'secondPerson',
+  regularity: 'both',
+  tense: 'imperfect',
+  conjugated: [],
+  infinitive: [],
+},
+thirdBothImp: {
+  pronoun: 'thirdPerson',
+  regularity: 'both',
+  tense: 'imperfect',
+  conjugated: [],
+  infinitive: [],
+},
+firstIrregPres: {
+  pronoun: 'firstPerson',
+  regularity: 'irregular',
+  tense: 'present',
+  conjugated: ['seja', 'fique', 'esteja', 'vá', 'dê', 'diga', 'faça', 'traga', 'possa', 'tenha', 'venha', 'ponha', 'leia', 'veja', 'saiba', 'queira', 'caiba', 'durma', 'fuja', 'ouça', 'peça', 'meça', 'perca', 'siga', 'sirva', 'sinta', 'haja', 'caia', 'saia', 'ria', 'valha', 'requeira', 'creia'],
+  infinitive: ['(ser)', '(ficar)', '(estar)', '(ir)', '(dar)', '(dizer)', '(fazer)', '(trazer)', '(poder)', '(ter)', '(vir)', '(pôr)', '(ler)', '(ver)', '(saber)', '(querer)', '(caber)', '(dormir)', '(fugir)', '(ouvir)', '(pedir)', '(medir)', '(perder)', '(seguir)', '(servir)', '(sentir)', '(haver)', '(cair)', '(sair)', '(rir)', '(valer)', '(requerer)', '(crer)'],
+},
+secondIrregPres: {
+  pronoun: 'secondPerson',
+  regularity: 'irregular',
+  tense: 'present',
+  conjugated: [],
+  infinitive: [],
+},
+thirdIrregPres: {
+  pronoun: 'thirdPerson',
+  regularity: 'irregular',
+  tense: 'present',
+  conjugated: [],
+  infinitive: [],
+},
+firstRegPres: {
+  pronoun: 'firstPerson',
+  regularity: 'regular',
+  tense: 'present',
+  conjugated: [],
+  infinitive: [],
+},
+secondRegPres: {
+  pronoun: 'secondPerson',
+  regularity: 'regular',
+  tense: 'present',
+  conjugated: [],
+  infinitive: [],
+},
+thirdRegPres: {
+  pronoun: 'thirdPerson',
+  regularity: 'regular',
+  tense: 'present',
+  conjugated: [],
+  infinitive: [],
+},
+firstBothPres: {
+  pronoun: 'firstPerson',
+  regularity: 'both',
+  tense: 'present',
+  conjugated: [],
+  infinitive: [],
+},
+secondBothPres: {
+  pronoun: 'secondPerson',
+  regularity: 'both',
+  tense: 'present',
+  conjugated: [],
+  infinitive: [],
+},
+thirdBothPres: {
+  pronoun: 'thirdPerson',
+  regularity: 'both',
+  tense: 'present',
+  conjugated: [],
+  infinitive: [],
+},
+firstIrregFut: {
+  pronoun: 'firstPerson',
+  regularity: 'irregular',
+  tense: 'future',
+  conjugated: ['for', 'estiver', 'for', 'der', 'disser', 'fizer', 'trouxer', 'puder', 'tiver', 'vier', 'puser', 'vir', 'souber', 'quiser', 'couber', 'houver'],
+  infinitive: [],
+},
+secondIrregFut: {
+  pronoun: 'secondPerson',
+  regularity: 'irregular',
+  tense: 'future',
+  conjugated: [],
+  infinitive: [],
+},
+thirdIrregFut: {
+  pronoun: 'thirdPerson',
+  regularity: 'irregular',
+  tense: 'future',
+  conjugated: [],
+  infinitive: [],
+},
+firstRegFut: {
+  pronoun: 'firstPerson',
+  regularity: 'regular',
+  tense: 'future',
+  conjugated: [],
+  infinitive: [],
+},
+secondRegFut: {
+  pronoun: 'secondPerson',
+  regularity: 'regular',
+  tense: 'future',
+  conjugated: [],
+  infinitive: [],
+},
+thirdRegFut: {
+  pronoun: 'thirdPerson',
+  regularity: 'regular',
+  tense: 'future',
+  conjugated: [],
+  infinitive: [],
+},
+firstBothFut: {
+  pronoun: 'firstPerson',
+  regularity: 'both',
+  tense: 'future',
+  conjugated: [],
+  infinitive: [],
+},
+secondBothFut: {
+  pronoun: 'secondPerson',
+  regularity: 'both',
+  tense: 'future',
+  conjugated: [],
+  infinitive: [],
+},
+thirdBothFut: {
+  pronoun: 'thirdPerson',
+  regularity: 'both',
+  tense: 'future',
+  conjugated: [],
+  infinitive: [],
 },
 };
+
 //populate empty keys
+verbs.secondIrregImp.infinitive = verbs.firstIrregImp.infinitive
+verbs.thirdIrregImp.infinitive = verbs.firstIrregImp.infinitive
 verbs.secondIrregImp.conjugated = verbs.firstIrregImp.conjugated.map((word) => 
   word += 'm'
 );
@@ -84,7 +223,7 @@ verbs.thirdIrregImp.conjugated = verbs.secondIrregImp.conjugated.map((word) =>
 for (key in verbs.thirdIrregImp.conjugated){
   verbs.thirdIrregImp.conjugated[key]=verbs.thirdIrregImp.conjugated[key].replace(/issemos/g,'íssemos')
   verbs.thirdIrregImp.conjugated[key]=verbs.thirdIrregImp.conjugated[key].replace(/assemos/g,'ássemos')
-  verbs.thirdIrregImp.conjugated[key]=verbs.thirdIrregImp.conjugated[key].replace(/essemos/g,'éssemos'),
+  verbs.thirdIrregImp.conjugated[key]=verbs.thirdIrregImp.conjugated[key].replace(/essemos/g,'éssemos')
   verbs.thirdIrregImp.conjugated[key]=verbs.thirdIrregImp.conjugated[key].replace(/fossemos/g,'fôssemos')
 };
 verbs.secondIrregImp.conjugated = verbs.firstIrregImp.conjugated.map((word) => 
@@ -94,17 +233,95 @@ verbs.firstRegImp.conjugated = verbs.firstRegImp.infinitive.map((word) =>{
   word = word.slice(1,word.length-2)
   return (word+='sse')
 });
+verbs.secondRegImp.infinitive = verbs.firstRegImp.infinitive
+verbs.thirdRegImp.infinitive = verbs.firstRegImp.infinitive
 verbs.secondRegImp.conjugated = verbs.firstRegImp.conjugated.map((word) => 
   word += 'm'
 );
 verbs.thirdRegImp.conjugated = verbs.secondRegImp.conjugated.map((word) => 
   word += 'os'
 );
+for (key in verbs.thirdRegImp.conjugated){
+  verbs.thirdRegImp.conjugated[key]=verbs.thirdRegImp.conjugated[key].replace(/issemos/g,'íssemos')
+  verbs.thirdRegImp.conjugated[key]=verbs.thirdRegImp.conjugated[key].replace(/assemos/g,'ássemos')
+  verbs.thirdRegImp.conjugated[key]=verbs.thirdRegImp.conjugated[key].replace(/essemos/g,'êssemos')
+};
+
+verbs.firstBothImp.infinitive = verbs.firstRegImp.infinitive.concat(verbs.firstIrregImp.infinitive);
+verbs.secondBothImp.infinitive = verbs.firstBothImp.infinitive
+verbs.thirdBothImp.infinitive = verbs.firstBothImp.infinitive
+verbs.firstBothImp.conjugated = verbs.firstRegImp.conjugated.concat(verbs.firstIrregImp.conjugated);
+verbs.secondBothImp.conjugated = verbs.secondRegImp.conjugated.concat(verbs.secondIrregImp.conjugated);
+verbs.thirdBothImp.conjugated = verbs.thirdRegImp.conjugated.concat(verbs.thirdIrregImp.conjugated);
 
 
+verbs.secondIrregPres.infinitive = verbs.firstIrregPres.infinitive
+verbs.thirdIrregPres.infinitive = verbs.firstIrregPres.infinitive
+verbs.secondIrregPres.conjugated = verbs.firstIrregPres.conjugated.map((word) => 
+  word += 'm'
+);
+verbs.thirdIrregPres.conjugated = verbs.secondIrregPres.conjugated.map((word) => 
+  word += 'os'
+);
+verbs.firstRegPres.infinitive = verbs.firstRegImp.infinitive
+verbs.secondRegPres.infinitive = verbs.firstRegImp.infinitive
+verbs.thirdRegPres.infinitive = verbs.firstRegImp.infinitive
+verbs.firstRegPres.conjugated = verbs.firstRegPres.infinitive.map((word) =>{
+  if (word[word.length-3]==='a'){
+  word = word.slice(1,word.length-3)
+  word+='e'
+  }
+  else if(word[word.length-3]==='e'||word[word.length-3]==='i'){
+  word = word.slice(1,word.length-3)
+  word+='a'
+  }
+  return word
+});
+verbs.secondRegPres.conjugated = verbs.firstRegPres.conjugated.map((word) => 
+  word += 'm'
+);
+verbs.thirdRegPres.conjugated = verbs.secondRegPres.conjugated.map((word) => 
+  word += 'os'
+);
+
+verbs.firstBothPres.infinitive = verbs.firstRegImp.infinitive.concat(verbs.firstIrregPres.infinitive);
+verbs.secondBothPres.infinitive = verbs.firstBothPres.infinitive
+verbs.thirdBothPres.infinitive = verbs.firstBothPres.infinitive
+verbs.firstBothPres.conjugated = verbs.firstRegPres.conjugated.concat(verbs.firstIrregPres.conjugated);
+verbs.secondBothPres.conjugated = verbs.secondRegPres.conjugated.concat(verbs.secondIrregPres.conjugated);
+verbs.thirdBothPres.conjugated = verbs.thirdRegPres.conjugated.concat(verbs.thirdIrregPres.conjugated);
+
+verbs.firstIrregFut.infinitive = verbs.firstIrregImp.infinitive
+verbs.secondIrregFut.infinitive = verbs.firstIrregImp.infinitive
+verbs.secondIrregFut.infinitive = verbs.firstIrregImp.infinitive
+verbs.secondIrregFut.conjugated = verbs.firstIrregFut.conjugated.map((word) => 
+word += 'em'
+);
+verbs.thirdIrregFut.conjugated = verbs.firstIrregFut.conjugated.map((word) => 
+  word += 'mos'
+);
+
+verbs.firstRegFut.infinitive = verbs.firstRegImp.infinitive
+verbs.secondRegFut.infinitive = verbs.firstRegImp.infinitive
+verbs.secondRegFut.infinitive = verbs.firstRegImp.infinitive
+verbs.firstRegFut.conjugated = verbs.firstRegFut.infinitive.map((word) => 
+word.slice(1,word.length-1)
+);
+verbs.secondRegFut.conjugated = verbs.firstRegFut.conjugated.map((word) => 
+word+='em'
+);
+verbs.thirdRegFut.conjugated = verbs.firstRegFut.conjugated.map((word) => 
+word+='mos'
+);
+
+verbs.firstBothFut.infinitive = verbs.firstRegImp.infinitive.concat(verbs.firstIrregPres.infinitive);
+verbs.secondBothFut.infinitive = verbs.firstBothFut.infinitive
+verbs.thirdBothFut.infinitive = verbs.firstBothFut.infinitive
+verbs.firstBothFut.conjugated = verbs.firstRegFut.conjugated.concat(verbs.firstIrregFut.conjugated);
+verbs.secondBothFut.conjugated = verbs.secondRegFut.conjugated.concat(verbs.secondIrregFut.conjugated);
+verbs.thirdBothFut.conjugated = verbs.thirdRegFut.conjugated.concat(verbs.thirdIrregFut.conjugated);
 
 
-console.log(verbs.thirdRegImp.conjugated)
 
 // get radio input
 var verbAnswer = document.querySelectorAll('input[type="radio"');
@@ -128,325 +345,27 @@ preferencesSubmitButton.addEventListener('click', getVerbAnswer);
 preferencesSubmitButton.onclick = () => {
 for (var key in verbs){
   if(containsAll(preferencesResults, [verbs[key].pronoun, verbs[key].regularity, verbs[key].tense])){
-    console.log('it worked')
+    console.log(verbs[key].conjugated[3])
   }
-    else console.log('it didnt')
 };
 }
-
-
-
-
-
-
-var allInfinitives = {
- imperfect: ['(comer)', '(matar)', '(iludir)', '(falar)', '(amar)', '(beber)', '(cantar)', '(comprar)', '(estudar)', '(vender)', '(viver)', '(achar)', '(acabar)', '(andar)', '(chamar)', '(encontrar)', '(morar)', '(morrer)', '(pensar)', '(olhar)', '(tomar)', '(voltar)', '(deixar)', '(levar)', '(dever)', '(existir)', '(receber)', '(trabalhar)', '(decidir)', '(fechar)', '(mandar)', '(perceber)', '(gostar)', '(usar)', '(esperar)', '(correr)', '(mostrar)', '(escrever)', '(abrir)', '(precisar)'],
- imperfectIrregular: ['(ser)', '(estar)', '(ir)', '(dar)', '(dizer)', '(fazer)', '(trazer)', '(poder)', '(ter)', '(vir)', '(pôr)', '(ver)', '(saber)', '(querer)', '(caber)', '(haver)'],
- imperfectMombo: [],
- present: ['(comer)', '(matar)', '(iludir)', '(falar)', '(amar)', '(beber)', '(cantar)', '(comprar)', '(estudar)', '(vender)', '(viver)', '(achar)', '(acabar)', '(andar)', '(chamar)', '(encontrar)', '(morar)', '(morrer)', '(pensar)', '(olhar)', '(tomar)', '(voltar)', '(deixar)', '(levar)', '(dever)', '(existir)', '(receber)', '(trabalhar)', '(decidir)', '(fechar)', '(mandar)', '(perceber)', '(gostar)', '(usar)', '(esperar)', '(correr)', '(mostrar)', '(escrever)', '(abrir)', '(precisar)'],
- presentIrregular: ['(ser)', '(ficar)', '(estar)', '(ir)', '(dar)', '(dizer)', '(fazer)', '(trazer)', '(poder)', '(ter)', '(vir)', '(pôr)', '(ler)', '(ver)', '(saber)', '(querer)', '(caber)', '(dormir)', '(fugir)', '(ouvir)', '(pedir)', '(medir)', '(perder)', '(seguir)', '(servir)', '(sentir)', '(haver)', '(cair)', '(sair)', '(rir)', '(valer)', '(requerer)', '(crer)'],
- presentMombo: [],
- future: ['(comer)', '(matar)', '(iludir)', '(falar)', '(amar)', '(beber)', '(cantar)', '(comprar)', '(estudar)', '(vender)', '(viver)', '(achar)', '(acabar)', '(andar)', '(chamar)', '(encontrar)', '(morar)', '(morrer)', '(pensar)', '(olhar)', '(tomar)', '(voltar)', '(deixar)', '(levar)', '(dever)', '(existir)', '(receber)', '(trabalhar)', '(decidir)', '(fechar)', '(mandar)', '(perceber)', '(gostar)', '(usar)', '(esperar)', '(correr)', '(mostrar)', '(escrever)', '(abrir)', '(precisar)'],
- futureIrregular: ['(ser)', '(estar)', '(ir)', '(dar)', '(dizer)', '(fazer)', '(trazer)', '(poder)', '(ter)', '(vir)', '(pôr)', '(ver)', '(saber)', '(querer)', '(caber)', '(haver)'],
- futureMombo: [],
-}
-//create mombo infinitives
-allInfinitives.imperfectMombo = allInfinitives.imperfect.concat(allInfinitives.imperfectIrregular);
-allInfinitives.presentMombo = allInfinitives.present.concat(allInfinitives.presentIrregular);
-allInfinitives.futureMombo = allInfinitives.future.concat(allInfinitives.futureIrregular);
-
-
-//imperfect object
-var subjunctiveImperfect = {
-  one: [], 
-  two: [], 
-  three: [], 
-  all: [], 
-  irregularOne: ['fosse', 'estivesse', 'fosse', 'desse', 'dissesse', 'fizesse', 'trouxesse', 'pudesse', 'tivesse', 'viesse', 'pusesse', 'visse', 'soubesse', 'quisesse', 'coubesse', 'houvesse'],
-  irregularTwo: [], 
-  irregularThree: [], 
-  irregularAll: [], 
-  momboOne: [], 
-  momboTwo: [], 
-  momboThree: [], 
-  momboAll: [], 
-
-}
-//conjugate regular imperfect verbs
-
-
-//present object
-var subjunctivePresent = {
-  one: [], 
-  two: [], 
-  three: [], 
-  all: [], 
-  irregularOne: ['seja', 'fique', 'esteja', 'vá', 'dê', 'diga', 'faça', 'traga', 'possa', 'tenha', 'venha', 'ponha', 'leia', 'veja', 'saiba', 'queira', 'caiba', 'durma', 'fuja', 'ouça', 'peça', 'meça', 'perca', 'siga', 'sirva', 'sinta', 'haja', 'caia', 'saia', 'ria', 'valha', 'requeira', 'creia'], 
-  irregularTwo: [], 
-  irregularThree: [], 
-  irregularAll: [], 
-  momboOne: [], 
-  momboTwo: [], 
-  momboThree: [], 
-  momboAll: [], 
-}
-
-//conjugate regular present verbs
-for (let i = 0; i < allInfinitives.present.length; i++) {
-  if(allInfinitives.present[i][allInfinitives.present[i].length-3]==='a'){
-    allInfinitives.present[i] = allInfinitives.present[i].slice(1,allInfinitives.present[i].length-3);
-    allInfinitives.present[i] += 'e'
-  }
-  subjunctivePresent.one = allInfinitives.present; 
-//  else if(regInfinitive[i][regInfinitive[i].length-3]==='e'||regInfinitive[i][regInfinitive[i].length-3]==='i'){
-// regInfinitive[i] = regInfinitive[i].slice(1,regInfinitive[i].length-3);
-// regInfinitive[i] += 'a'
-//  }
- 
-}
-
-// Vocês
-// for (let i = 0; i < regInfinitive.length; i++) {
-// regInfinitive[i] += 'm'
-// subjunctivePresent.two = 
-// }
-// // Nós
-// for (let i = 0; i < regInfinitive.length; i++) {
-// regInfinitive[i] += 'os'
-// subjunctivePresent.three = 
-// }
-
-
-//future object
-var subjunctiveFuture = {
-  one: [], 
-  two: [], 
-  three: [], 
-  all: [], 
-  irregularOne: ['for', 'estiver', 'for', 'der', 'disser', 'fizer', 'trouxer', 'puder', 'tiver', 'vier', 'puser', 'vir', 'souber', 'quiser', 'couber', 'houver'],
-  irregularTwo: [], 
-  irregularThree: [], 
-  irregularAll: [], 
-  momboOne: [], 
-  momboTwo: [], 
-  momboThree: [], 
-  momboAll: [], 
-}
-//conjugate regular future verbs
-
-
-
-
-//everything below here is old code to be refactored
-
-
-
-// create mombo array for infinitives 
-var momboInfinitives = [];
-for (let i = 0; i< infinitive.length; i++) {
-  momboInfinitives.push(infinitive[i]);
-}
-for (let i = 0; i < regInfinitiveUnconjugated.length; i++) {
-  momboInfinitives.push(regInfinitiveUnconjugated[i]);
-}
-
-// conjugate regular present verbs 
-var regSubj = [];
-var regSubjTwo = [];
-var regSubjThree = [];
-for (let i = 0; i < regInfinitive.length; i++) {
-  if(regInfinitive[i][regInfinitive[i].length-3]==='a'){
-regInfinitive[i] = regInfinitive[i].slice(1,regInfinitive[i].length-3);
-regInfinitive[i] += 'e'
-  }
- else if(regInfinitive[i][regInfinitive[i].length-3]==='e'||regInfinitive[i][regInfinitive[i].length-3]==='i'){
-regInfinitive[i] = regInfinitive[i].slice(1,regInfinitive[i].length-3);
-regInfinitive[i] += 'a'
- }
- regSubj.push(regInfinitive[i]);
-}
-// Vocês
-for (let i = 0; i < regInfinitive.length; i++) {
-regInfinitive[i] += 'm'
-regSubjTwo.push(regInfinitive[i]);
-}
-// Nós
-for (let i = 0; i < regInfinitive.length; i++) {
-regInfinitive[i] += 'os'
-regSubjThree.push(regInfinitive[i]);
-}
-
-// create mombo arrays for present reg and irreg
-var momboSubj = [];
-var momboSubjTwo = [];
-var momboSubjThree = [];
-for (let i = 0; i< subj.length; i++) {
-  momboSubj.push(subj[i]);
-}
-for (let i = 0; i < regSubj.length; i++) {
-  momboSubj.push(regSubj[i]);
-}
-for (let i = 0; i< subjTwo.length; i++) {
-  momboSubjTwo.push(subjTwo[i]);
-}
-for (let i = 0; i < regSubjTwo.length; i++) {
-  momboSubjTwo.push(regSubjTwo[i]);
-}
-
-for (let i = 0; i< subjThree.length; i++) {
-  momboSubjThree.push(subjThree[i]);
-}
-for (let i = 0; i < regSubjThree.length; i++) {
-  momboSubjThree.push(regSubjThree[i]);
-}
-
-// do the same for subjunctive imperfect
-var regSubjImp = [];
-var regSubjImpTwo = [];
-var regSubjImpThree = [];
-
-for (let i = 0; i < regInfImp.length; i++) {
-  if(regInfImp[i][regInfImp[i].length-3]==='a'){
-    regInfImp[i] = regInfImp[i].slice(1,regInfImp[i].length-3);
-    regInfImp[i] += 'asse'
-  }
- else if(regInfImp[i][regInfImp[i].length-3]==='e'){
-  regInfImp[i] = regInfImp[i].slice(1,regInfImp[i].length-3);
-  regInfImp[i] += 'esse'
- }
- else if(regInfImp[i][regInfImp[i].length-3]==='i'){
-  regInfImp[i] = regInfImp[i].slice(1,regInfImp[i].length-3);
-  regInfImp[i] += 'isse'
- }
- regSubjImp.push(regInfImp[i]);
-}
-// Vocês
-for (let i = 0; i < regInfImp.length; i++) {
-  regInfImp[i] += 'm'
-  regSubjImpTwo.push(regInfImp[i]);
-  }
-// Nós
-for (let i = 0; i < regInfImp.length; i++) {
-  regInfImp[i] += 'os';
-  regInfImp[i] = regInfImp[i].replace(/issemos/g,'íssemos');
-  regInfImp[i] = regInfImp[i].replace(/assemos/g,'ássemos');
-  regInfImp[i] = regInfImp[i].replace(/essemos/g,'êssemos');
-  regSubjImpThree.push(regInfImp[i]);
-  }
-
-//conjugate irregulars 
-var impSubjTwo = [];
-var impSubjThree = [];
-for (let i = 0; i < impSpareArray.length; i++) {
-  impSubjTwo.push(impSpareArray[i] += 'm');
-}
-for (let i = 0;i < impSpareArray.length; i++) {
-  impSpareArray[i] += 'os';
-  impSpareArray[i] = impSpareArray[i].replace(/issemos/g,'íssemos');
-  impSpareArray[i] = impSpareArray[i].replace(/assemos/g,'ássemos');
-  impSpareArray[i] = impSpareArray[i].replace(/essemos/g,'éssemos');
-  impSpareArray[i] = impSpareArray[i].replace('valéssemos','valêssemos');
-  impSpareArray[i] = impSpareArray[i].replace('fossemos','fôssemos');
-  impSpareArray[i] = impSpareArray[i].replace('fossemos','fôssemos');
-  impSpareArray[i] = impSpareArray[i].replace('léssemos','lêssemos');
-  impSpareArray[i] = impSpareArray[i].replace('léssemos','lêssemos');
-  impSpareArray[i] = impSpareArray[i].replace('perdéssemos','perdêssemos');
-  impSpareArray[i] = impSpareArray[i].replace('requeréssemos','requerêssemos');
-  impSpareArray[i] = impSpareArray[i].replace('créssemos','crêssemos');
-  impSubjThree.push(impSpareArray[i]);
-} 
-
-
-//create mombo arrays for reg and irreg
-var momboImpSubj = [];
-var momboImpSubjTwo = [];
-var momboImpSubjThree = [];
-for (let i = 0; i< impSubj.length; i++) {
-  momboImpSubj.push(impSubj[i]);
-}
-for (let i = 0; i < regSubjImp.length; i++) {
-  momboImpSubj.push(regSubjImp[i]);
-}
-for (let i = 0; i< impSubjTwo.length; i++) {
-  momboImpSubjTwo.push(impSubjTwo[i]);
-}
-for (let i = 0; i < regSubjTwo.length; i++) {
-  momboImpSubjTwo.push(regSubjImpTwo[i]);
-}
-for (let i = 0; i< impSubjThree.length; i++) {
-  momboImpSubjThree.push(impSubjThree[i]);
-}
-for (let i = 0; i < regSubjThree.length; i++) {
-  momboImpSubjThree.push(regSubjImpThree[i]);
-}
-
-
-// do the same for subjunctive future
-var futSubjTwo = [];
-var futSubjThree = [];
-
-for (let i = 0; i < futSpareArray.length; i++) {
-  futSubjTwo.push(futSpareArray[i]+='em');
-}
-for (let i = 0; i < futSpareArray.length; i++) {
- futSpareArray[i] = futSpareArray[i].replace(/rem/g,'rmos');
- futSubjThree.push(futSpareArray[i]);
-}
-//conjugate regulars for fut subj
-var regFutSubj=[];
-var regFutSubjTwo=[];
-var regFutSubjThree=[];
-
-for (let i = 0; i < regFutInf.length; i++) {
-  regFutInf[i] = regFutInf[i].slice(1, regFutInf[i].length-1)
-  regFutSubj.push(regFutInf[i]);
-};
-for (let i = 0; i < regFutInf.length; i++) {
-  regFutSubjTwo.push(regFutInf[i]+='em')
-};
-for (let i = 0; i < regFutInf.length; i++) {
-  regFutInf[i]=regFutInf[i].replace(/rem/g,'rmos')
-  regFutSubjThree.push(regFutInf[i]);
-};
-//create mombo arrays for reg and irreg
-var momboFutSubj = [];
-var momboFutSubjTwo = [];
-var momboFutSubjThree = [];
-for (let i = 0; i< futSubj.length; i++) {
-  momboFutSubj.push(futSubj[i]);
-}
-for (let i = 0; i < regFutSubj.length; i++) {
-  momboFutSubj.push(regFutSubj[i]);
-}
-for (let i = 0; i< futSubjTwo.length; i++) {
-  momboFutSubjTwo.push(futSubjTwo[i]);
-}
-for (let i = 0; i < regFutSubjTwo.length; i++) {
-  momboFutSubjTwo.push(regFutSubjTwo[i]);
-}
-for (let i = 0; i< futSubjThree.length; i++) {
-  momboFutSubjThree.push(futSubjThree[i]);
-}
-for (let i = 0; i < regFutSubjThree.length; i++) {
-  momboFutSubjThree.push(regFutSubjThree[i]);
-}
-
-
-
+//can do something like if randomPronoun is 1-4, randomPronoun = 'first', and then add in there, if containsall(~~~) && randomPronoun = verbs[key].pronoun
+//it worked
+// var randomIrregVerb=Math.floor(Math.random()*verbs.firstIrregImp.infinitive.length);
+// var randomRegVerb=Math.floor(Math.random()*verbs.firstRegImp.infinitive.length);
 //First round
-var momboRandomVerb=Math.floor(Math.random()*momboInfinitives.length);
-infinitiveText.textContent=momboInfinitives[momboRandomVerb];
+var randomBothPresVerb=Math.floor(Math.random()*verbs.firstBothPres.infinitive.length);
+infinitiveText.textContent=verbs.firstBothPres.infinitive[randomBothPresVerb];
 sentOne.textContent=`${desireVerb[randomDesire]} que ${pronoun[randomPronoun]}`;
 if (randomPronoun>4 && randomPronoun<8){
-var correctAnswer=momboSubjTwo[momboRandomVerb];
+var correctAnswer=verbs.secondBothPres.conjugated[randomBothPresVerb];
 }
 else if(randomPronoun>7){
-  correctAnswer=momboSubjThree[momboRandomVerb];
+  correctAnswer=verbs.thirdBothPres.conjugated[randomBothPresVerb];
 }
 else{
- correctAnswer=momboSubj[momboRandomVerb];
+ correctAnswer=verbs.firstBothPres.conjugated[randomBothPresVerb];
 }
-
 
 
 //Check
