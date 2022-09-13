@@ -31,8 +31,113 @@ var sidebarRight = document.getElementById('sidebar-right');
 var futSentStarts =['Se ', 'Quando ']
 var preferencesResults=[];
 var verbSelected = document.getElementById('verbSelected');
+var preferencesSubmitButton = document.getElementById('preferencesSubmitButton');
 
 //OBJECTS
+var verbs = {
+firstIrregImp: {
+  pronoun: 'firstPerson',
+  regularity: 'irregular',
+  tense: 'imperfect',
+  conjugated: ['fosse', 'estivesse', 'fosse', 'desse', 'dissesse', 'fizesse', 'trouxesse', 'pudesse', 'tivesse', 'viesse', 'pusesse', 'visse', 'soubesse', 'quisesse', 'coubesse', 'houvesse'],
+  infinitive: ['(ser)', '(estar)', '(ir)', '(dar)', '(dizer)', '(fazer)', '(trazer)', '(poder)', '(ter)', '(vir)', '(pôr)', '(ver)', '(saber)', '(querer)', '(caber)', '(haver)'], 
+},
+secondIrregImp: {
+  pronoun: 'secondPerson',
+  regularity: 'irregular',
+  tense: 'imperfect',
+  conjugated: [],
+},
+thirdIrregImp: {
+  pronoun: 'thirdPerson',
+  regularity: 'irregular',
+  tense: 'imperfect',
+  conjugated: [],
+},
+firstRegImp: {
+  pronoun: 'firstPerson',
+  regularity: 'regular',
+  tense: 'imperfect',
+  conjugated: [],
+  infinitive: ['(comer)', '(matar)', '(iludir)', '(falar)', '(amar)', '(beber)', '(cantar)', '(comprar)', '(estudar)', '(vender)', '(viver)', '(achar)', '(acabar)', '(andar)', '(chamar)', '(encontrar)', '(morar)', '(morrer)', '(pensar)', '(olhar)', '(tomar)', '(voltar)', '(deixar)', '(levar)', '(dever)', '(existir)', '(receber)', '(trabalhar)', '(decidir)', '(fechar)', '(mandar)', '(perceber)', '(gostar)', '(usar)', '(esperar)', '(correr)', '(mostrar)', '(escrever)', '(abrir)', '(precisar)'],
+},
+secondRegImp: {
+  pronoun: 'secondPerson',
+  regularity: 'regular',
+  tense: 'imperfect',
+  conjugated: [],
+},
+thirdRegImp: {
+  pronoun: 'thirdPerson',
+  regularity: 'regular',
+  tense: 'imperfect',
+  conjugated: [],
+},
+};
+//populate empty keys
+verbs.secondIrregImp.conjugated = verbs.firstIrregImp.conjugated.map((word) => 
+  word += 'm'
+);
+verbs.thirdIrregImp.conjugated = verbs.secondIrregImp.conjugated.map((word) => 
+  word += 'os',
+);
+for (key in verbs.thirdIrregImp.conjugated){
+  verbs.thirdIrregImp.conjugated[key]=verbs.thirdIrregImp.conjugated[key].replace(/issemos/g,'íssemos')
+  verbs.thirdIrregImp.conjugated[key]=verbs.thirdIrregImp.conjugated[key].replace(/assemos/g,'ássemos')
+  verbs.thirdIrregImp.conjugated[key]=verbs.thirdIrregImp.conjugated[key].replace(/essemos/g,'éssemos'),
+  verbs.thirdIrregImp.conjugated[key]=verbs.thirdIrregImp.conjugated[key].replace(/fossemos/g,'fôssemos')
+};
+verbs.secondIrregImp.conjugated = verbs.firstIrregImp.conjugated.map((word) => 
+  word += 'm'
+);
+verbs.firstRegImp.conjugated = verbs.firstRegImp.infinitive.map((word) =>{
+  word = word.slice(1,word.length-2)
+  return (word+='sse')
+});
+verbs.secondRegImp.conjugated = verbs.firstRegImp.conjugated.map((word) => 
+  word += 'm'
+);
+verbs.thirdRegImp.conjugated = verbs.secondRegImp.conjugated.map((word) => 
+  word += 'os'
+);
+
+
+
+
+console.log(verbs.thirdRegImp.conjugated)
+
+// get radio input
+var verbAnswer = document.querySelectorAll('input[type="radio"');
+function getVerbAnswer(){
+  for (let i = 0; i < verbAnswer.length; i++) {
+    if(verbAnswer[i].checked){
+      preferencesResults.unshift(verbAnswer[i].value);
+    };
+    if(preferencesResults.length>3){
+      preferencesResults.length = 3;
+    }
+  }
+msgHidden = false;
+reset();
+openSidebarLeft();
+}
+
+preferencesSubmitButton.addEventListener('click', getVerbAnswer);
+
+//check pref results 
+preferencesSubmitButton.onclick = () => {
+for (var key in verbs){
+  if(containsAll(preferencesResults, [verbs[key].pronoun, verbs[key].regularity, verbs[key].tense])){
+    console.log('it worked')
+  }
+    else console.log('it didnt')
+};
+}
+
+
+
+
+
 
 var allInfinitives = {
  imperfect: ['(comer)', '(matar)', '(iludir)', '(falar)', '(amar)', '(beber)', '(cantar)', '(comprar)', '(estudar)', '(vender)', '(viver)', '(achar)', '(acabar)', '(andar)', '(chamar)', '(encontrar)', '(morar)', '(morrer)', '(pensar)', '(olhar)', '(tomar)', '(voltar)', '(deixar)', '(levar)', '(dever)', '(existir)', '(receber)', '(trabalhar)', '(decidir)', '(fechar)', '(mandar)', '(perceber)', '(gostar)', '(usar)', '(esperar)', '(correr)', '(mostrar)', '(escrever)', '(abrir)', '(precisar)'],
@@ -99,8 +204,7 @@ for (let i = 0; i < allInfinitives.present.length; i++) {
 //  }
  
 }
-console.log(subjunctivePresent.one);
-console.log(allInfinitives.present)
+
 // Vocês
 // for (let i = 0; i < regInfinitive.length; i++) {
 // regInfinitive[i] += 'm'
@@ -368,18 +472,14 @@ document.addEventListener('keypress', function (e) {
   }
 });
 
-
 //contains all function to check preferences results
 function containsAll(arr, values) {
   return values.every(value => {
     return arr.includes(value);
   });
 }
-// testArray = ['hello','all','you'];
-// console.log(containsAll(testArray, ['hello','alls','you']));
 
 //Reset game
-
 function reset(){
   if(msgHidden === true) {
     return;
@@ -691,24 +791,7 @@ function openSidebarRight (){
 
 cheatSheetButton.addEventListener('click', openSidebarRight);
 
-// get radio input
-var verbAnswer = document.querySelectorAll('input[type="radio"');
-var preferencesSubmitButton = document.getElementById('preferencesSubmitButton');
-function getVerbAnswer(){
-  for (let i = 0; i < verbAnswer.length; i++) {
-    if(verbAnswer[i].checked){
-      preferencesResults.unshift(verbAnswer[i].value);
-    };
-    if(preferencesResults.length>3){
-      preferencesResults.length = 3;
-    }
-  }
-msgHidden = false;
-reset();
-openSidebarLeft();
-}
 
-preferencesSubmitButton.addEventListener('click', getVerbAnswer);
 
 //change cheat sheet 
 
