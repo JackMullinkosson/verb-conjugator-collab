@@ -16,7 +16,9 @@ var sidebarRight = document.getElementById('sidebar-right');
 var futSentStarts =['Se ', 'Quando ']
 var preferencesResults=[];
 var verbSelected = document.getElementById('verbSelected');
+verbSelected.innerHTML = 'Verb tense: Subjunctive Present'; 
 var preferencesSubmitButton = document.getElementById('preferencesSubmitButton');
+
 
 
 //OBJECTS
@@ -363,6 +365,25 @@ allBothFut: {
   third: [],
   infinitive: [],
 },
+//INDICATIVE
+indFirstIrregPres: {
+  pronoun: 'firstPerson',
+  pronounNumberMin: 4,
+  pronounNumberMax: 0,
+  tense: 'imperfect',
+  regularity: 'irregular',
+  conjugated: ['(vou)', '(sou)', '(estou)', '(dou)', '(digo)', '(faço)', '(trago)', '(posso)', '(tenho)', '(venho)', '(ponho)', '(leio)', '(vejo)', '(caio)', '(saio)', '(creio)', '(fujo)', '(rio)', '(subo)', '(caibo)', '(quero)', '(sei)', '(durmo)', '(meço)', '(ouço)', '(peço)', '(perco)', '(sigo)', '(sirvo)', '(sinto)', '(valho)', '(requeiro)', '(hei)'],
+  infinitive: ['(ir)', '(ser)', '(estar)', '(dar)', '(dizer)', '(fazer)', '(trazer)', '(poder)', '(ter)', '(vir)', '(pôr)', '(ler)', '(ver)', '(cair)', '(sair)', '(crer)', '(fugir)', '(rir)', '(subir)', '(caber)', '(querer)', '(saber)', '(dormir)', '(medir)', '(ouvir)', '(pedir)', '(perder)', '(seguir)', '(servir)', '(sentir)', '(valer)', '(requerer)', '(haver)'], 
+},
+indSecondIrregPres: {
+  pronoun: 'vocePerson',
+  pronounNumberMin: 4,
+  pronounNumberMax: 0,
+  tense: 'imperfect',
+  regularity: 'irregular',
+  conjugated: ['(vai)', '(é)', '(está)', '(dá)', '(diz)', '(faz)', '(traz)', '(pode)', '(tem)', '(vem)', '(pōe)', '(lê)', '(vê)', '(cai)', '(sai)', '(crê)', '(foge)', '(ri)', '(sobe)', '(cabe)', '(quer)', '(sabe)', '(dorme)', '(mede)', '(ouve)', '(pede)', '(perde)', '(segue)', '(serve)', '(sente)', '(vale)', '(requeiro)', '(hei)'],
+  infinitive: ['(ir)', '(ser)', '(estar)', '(dar)', '(dizer)', '(fazer)', '(trazer)', '(poder)', '(ter)', '(vir)', '(pôr)', '(ler)', '(ver)', '(cair)', '(sair)', '(crer)', '(fugir)', '(rir)', '(subir)', '(caber)', '(querer)', '(saber)', '(dormir)', '(medir)', '(ouvir)', '(pedir)', '(perder)', '(seguir)', '(servir)', '(sentir)', '(valer)', '(requer)', '(há)'], 
+}
 };
 
 //populate empty keys
@@ -522,6 +543,7 @@ function containsAll(arr, values) {
 }
 
 //First round
+
 var randomBothPresVerb=Math.floor(Math.random()*verbs.firstBothPres.infinitive.length);
 infinitiveText.textContent=verbs.firstBothPres.infinitive[randomBothPresVerb];
 sentOne.textContent=`${desireVerb[randomDesire]} que ${pronounList[randomPronoun]}`;
@@ -558,10 +580,15 @@ document.addEventListener('keypress', function (e) {
   }
 });
 
+
+
 //Reset game
 function reset(){
   if(msgHidden === true) {
     return;
+}
+if(preferencesResults.length===0){
+  preferencesResults.push('allPersons','both','present')
 }
 for (var key in verbs){
   if(containsAll(preferencesResults, [verbs[key].pronoun, verbs[key].regularity, verbs[key].tense])){
@@ -590,32 +617,26 @@ for (var key in verbs){
       verbSelected.style.display = 'block';
       verbSelected.innerHTML = 'Verb tense: Subjunctive Future'; 
     }
-    else {
-      sentOne.textContent=`${desireVerb[randomDesire]} que ${pronounList[randomPronoun]}`;
-    };
   if(preferencesResults[0] === 'allPersons'){
-    console.log(verbs[key].infinitive)
+    infinitiveText.textContent=verbs[key].infinitive[randomSpecializedNumber]
   if (randomPronoun>4 && randomPronoun<8){
     correctAnswer=verbs[key].second[randomSpecializedNumber]
-    infinitiveText.textContent=verbs[key].infinitive[randomSpecializedNumber]
     }
     else if(randomPronoun>7){
       correctAnswer=verbs[key].third[randomSpecializedNumber]
-      infinitiveText.textContent=verbs[key].infinitive[randomSpecializedNumber]
     }
     else{
      correctAnswer=verbs[key].first[randomSpecializedNumber]
-     infinitiveText.textContent=verbs[key].infinitive[randomSpecializedNumber]
     }
 }
   }
-};
+  }
   msg.style.display = 'none';
   playAgain.style.display='none';
   input.value='';
   msgHidden=true;
   console.log(preferencesResults);
-}
+};
 
 
 
@@ -659,7 +680,7 @@ function openSidebarRight (){
 cheatSheetButton.addEventListener('click', openSidebarRight);
 
 // get radio input
-var verbAnswer = document.querySelectorAll('input[type="radio"');
+var verbAnswer = document.getElementsByClassName('subjunctive-input');
 function getVerbAnswer(){
   for (let i = 0; i < verbAnswer.length; i++) {
     if(verbAnswer[i].checked){
@@ -675,6 +696,36 @@ openSidebarLeft();
 }
 
 preferencesSubmitButton.addEventListener('click', getVerbAnswer);
+//change tense settings
+var indicativeSettings = document.getElementById('indicative-settings');
+var subjunctiveSettings = document.getElementById('subjunctive-settings');
+var tenseSettingsButtons = document.getElementsByClassName('tense-settings-button');
+var indicativeSettingsButton = document.getElementById('indicative-button');
+var subjunctiveSettingsButton = document.getElementById('subjunctive-button');
+
+indicativeSettings.style.display='none';
+
+function changeTenseSettings(e){
+  subjunctiveSettingsButton.classList.remove('active')
+  indicativeSettingsButton.classList.remove('active')
+  e.target.classList.add('active')
+}
+for (let i = 0; i < tenseSettingsButtons.length; i++) {
+  tenseSettingsButtons[i].addEventListener('click',changeTenseSettings);
+}
+
+function changeTenseSettingsToIndicative(){
+  subjunctiveSettings.style.display='none';
+  indicativeSettings.style.display='block';
+}
+
+function changeTenseSettingsToSubjunctive(){
+  subjunctiveSettings.style.display='block';
+  indicativeSettings.style.display='none';
+}
+
+subjunctiveSettingsButton.addEventListener('click', changeTenseSettingsToSubjunctive)
+indicativeSettingsButton.addEventListener('click', changeTenseSettingsToIndicative)
 
 //change cheat sheet 
 var firstTenseButton=document.getElementById('first-tense-button')

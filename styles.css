@@ -28,7 +28,6 @@ body {
   }
   #verbSelected {
     text-align: center;
-    display: none;
   }
 
   section{
@@ -44,6 +43,7 @@ body {
   }
   #box-left{
     margin-right:20px;
+    
   }
  
   .sidebar-button{
@@ -56,6 +56,8 @@ body {
    font-size: 1em;
    color:white;
    word-wrap: break-word;
+   justify-content: center;
+   align-items: center;
   }
 
   .sidebar-button:hover {
@@ -70,7 +72,45 @@ body {
 
 #sidebar-left{
     display: none;
+    
   }
+#tense-settings-button-wrapper{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+}
+#indicative-settings{
+    display: none;
+  }
+#subjunctive-settings{
+  margin-left: -60px;
+}
+
+#settings-wrapper{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.tense-settings-button{
+  margin-top: 20px;
+  margin-right: 5%;
+  margin-left:5%;
+  user-select:none;
+  border-radius: 4px;
+  background-color:rgba(238, 241, 247, .9);
+  border: 0px;
+  padding: 2%;
+  color: black;
+  word-wrap: break-word;
+  
+}
+.tense-settings-button:hover {
+cursor: pointer;
+border: 1px solid rgba(238, 241, 247, .9);
+}
 
   #sent-one, #sent-two, #response {
     display: inline-flex;
@@ -145,8 +185,8 @@ body {
 }
 
 .tense-button:hover{
-    
     cursor: pointer;
+    border: 1px solid rgba(238, 241, 247, .9);
 }
 
 #first-tense-button{
@@ -157,6 +197,9 @@ body {
     border: 1px solid rgba(238, 241, 247, .9); 
     color: rgb(0,0,0,.8);  
     font-weight: bold;
+}
+.active:hover{
+  cursor:auto;
 }
 .cheat-sheet-text{
     margin-left: -20%;

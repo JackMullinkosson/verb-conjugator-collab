@@ -18,49 +18,111 @@
     <div id="box-left" class="box side">
         <button id="sidebar-button-left" class="sidebar-button">Settings <br>˅</button>
         <div id="sidebar-left" class="sidebar">
+        <div id="settings-wrapper">
+        <div id="tense-settings-button-wrapper">
+            <button id="subjunctive-button" class="tense-settings-button active">Subjunctive</button>
+            <button id="indicative-button" class="tense-settings-button">Indicative</button>
+        </div>    
+        <div id="subjunctive-settings">
             <h4><i>Tenses</i></h4>
             <label>
-            <input type="radio" name="tenseAnswer" value="imperfect">
+            <input class='subjunctive-input' type="radio" name="tenseAnswer" value="imperfect">
             Imperfect only</label>
             <label>
                 <br>
-            <input type="radio" name="tenseAnswer" checked value="present">
+            <input class='subjunctive-input' type="radio" name="tenseAnswer" checked value="present">
             Present only (default)</label>
             <br>
             <label>
-            <input type="radio" name="tenseAnswer" value="future">
+            <input class='subjunctive-input' type="radio" name="tenseAnswer" value="future">
             Future only</label>
             <br>
             <h4><i>Verbs</i></h4>
             <label>
-            <input type="radio" name="verbAnswer" value="irregular">
+            <input class='subjunctive-input' type="radio" name="verbAnswer" value="irregular">
             Irregular only</label>
             <label>
                 <br>
-            <input type="radio" name="verbAnswer" value="regular">
+            <input class='subjunctive-input' type="radio" name="verbAnswer" value="regular">
             Regular only </label>
             <label>
                 <br>
-            <input type="radio" name="verbAnswer" checked value="both">
+            <input class='subjunctive-input' type="radio" name="verbAnswer" checked value="both">
             Both (default)</label>
             <h4><i>Pronouns</i></h4>
             <label>
-            <input type="radio" name="pronounAnswer" value="firstPerson">
+            <input class='subjunctive-input' type="radio" name="pronounAnswer" value="firstPerson">
             Eu/você/ele/ela only</label>
             <label>
                 <br>
-            <input type="radio" name="pronounAnswer" value="secondPerson">
+            <input class='subjunctive-input' type="radio" name="pronounAnswer" value="secondPerson">
             Vocês/eles/elas only </label>
             <label>
                 <br>
-            <input type="radio" name="pronounAnswer" value="thirdPerson">
+            <input class='subjunctive-input' type="radio" name="pronounAnswer" value="thirdPerson">
            Nós only</label>
             <br>
             <label>
-            <input type="radio" name="pronounAnswer" checked value="allPersons">
+            <input class='subjunctive-input' type="radio" name="pronounAnswer" checked value="allPersons">
             All (default)</label>
             <br><br>
             <input id="preferencesSubmitButton" type="submit">
+        </div>
+        <div id="indicative-settings">
+            <h4><i>Tenses</i></h4>
+            <label>
+            <input type="radio" name="indicative-tenseAnswer" value="indicative-imperfect">
+            Imperfect only</label>
+            <label>
+                <br>
+            <input type="radio" name="indicative-tenseAnswer" checked value="indicative-perfect">
+            Perfect only (default)</label>
+            <br>
+            <label>
+            <input type="radio" name="indicative-tenseAnswer" value="indicative-present">
+            Present only</label>
+            <br>
+            <label>
+            <input type="radio" name="indicative-tenseAnswer" value="indicative-conditional">
+            Future of the past (conditional) only</label>
+            <br>
+            <h4><i>Verbs</i></h4>
+            <label>
+            <input type="radio" name="indicative-verbAnswer" value="irregular">
+            Irregular only</label>
+            <label>
+                <br>
+            <input type="radio" name="indicative-verbAnswer" value="regular">
+            Regular only </label>
+            <label>
+                <br>
+            <input type="radio" name="indicative-verbAnswer" checked value="both">
+            Both (default)</label>
+            <h4><i>Pronouns</i></h4>
+            <label>
+            <input type="radio" name="indicative-pronounAnswer" value="firstPerson">
+            Eu/você/ele/ela only</label>
+            <label>
+                <br>
+            <label>
+            <input type="radio" name="indicative-pronounAnswer" value="vocePerson">
+            Você/ele/ela only</label>
+            <label>
+                <br>
+            <input type="radio" name="indicative-pronounAnswer" value="secondPerson">
+            Vocês/eles/elas only </label>
+            <label>
+                <br>
+            <input type="radio" name="indicative-pronounAnswer" value="thirdPerson">
+           Nós only</label>
+            <br>
+            <label>
+            <input type="radio" name="indicative-pronounAnswer" checked value="allPersons">
+            All (default)</label>
+            <br><br>
+            <input id="preferencesSubmitButton" type="submit">
+        </div>
+    </div>
     </div>
     </div>
     <div class="box middle">
