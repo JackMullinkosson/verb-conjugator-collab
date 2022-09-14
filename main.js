@@ -1,7 +1,7 @@
 var desireVerb = ['Quero', 'Desejo', 'Espero', 'Duvido', 'Rezo', 'Pode ser', 'É possível', 'É preciso', 'É necessário', 'É provável', 'Oxala', 'Tomara', 'Prefiro', 'Para', 'A menos', 'Desde', 'É sufficiente','Receio'];
-var pronoun = ['eu', 'você', 'ela', 'ele', 'a gente', 'vocês', 'eles', 'elas','nós']
+var pronounList = ['eu', 'você', 'ela', 'ele', 'a gente', 'vocês', 'eles', 'elas','nós']
 var randomDesire=Math.floor(Math.random()*desireVerb.length);
-var randomPronoun=Math.floor(Math.random()*pronoun.length);
+var randomPronoun=Math.floor(Math.random()*pronounList.length);
 var infinitiveText = document.getElementById('infinitive');
 var input=document.getElementById('response');
 var msg=document.getElementById('msg');
@@ -18,10 +18,13 @@ var preferencesResults=[];
 var verbSelected = document.getElementById('verbSelected');
 var preferencesSubmitButton = document.getElementById('preferencesSubmitButton');
 
+
 //OBJECTS
 var verbs = {
 firstIrregImp: {
   pronoun: 'firstPerson',
+  pronounNumberMin: 4,
+  pronounNumberMax: 0,
   regularity: 'irregular',
   tense: 'imperfect',
   conjugated: ['fosse', 'estivesse', 'fosse', 'desse', 'dissesse', 'fizesse', 'trouxesse', 'pudesse', 'tivesse', 'viesse', 'pusesse', 'visse', 'soubesse', 'quisesse', 'coubesse', 'houvesse'],
@@ -29,6 +32,8 @@ firstIrregImp: {
 },
 secondIrregImp: {
   pronoun: 'secondPerson',
+  pronounNumberMin: 3,
+  pronounNumberMax: 5,
   regularity: 'irregular',
   tense: 'imperfect',
   conjugated: [],
@@ -36,6 +41,8 @@ secondIrregImp: {
 },
 thirdIrregImp: {
   pronoun: 'thirdPerson',
+  pronunNumberMin: 1,
+  pronounNumberMax: pronounList.length-1,
   regularity: 'irregular',
   tense: 'imperfect',
   conjugated: [],
@@ -43,6 +50,8 @@ thirdIrregImp: {
 },
 firstRegImp: {
   pronoun: 'firstPerson',
+  pronounNumberMin: 4,
+  pronounNumberMax: 0,
   regularity: 'regular',
   tense: 'imperfect',
   conjugated: [],
@@ -50,6 +59,8 @@ firstRegImp: {
 },
 secondRegImp: {
   pronoun: 'secondPerson',
+  pronounNumberMin: 3,
+  pronounNumberMax: 5,
   regularity: 'regular',
   tense: 'imperfect',
   conjugated: [],
@@ -57,6 +68,8 @@ secondRegImp: {
 },
 thirdRegImp: {
   pronoun: 'thirdPerson',
+  pronunNumberMin: 1,
+  pronounNumberMax: pronounList.length-1,
   regularity: 'regular',
   tense: 'imperfect',
   conjugated: [],
@@ -64,6 +77,8 @@ thirdRegImp: {
 },
 firstBothImp: {
   pronoun: 'firstPerson',
+  pronounNumberMin: 4,
+  pronounNumberMax: 0,
   regularity: 'both',
   tense: 'imperfect',
   conjugated: [],
@@ -71,6 +86,8 @@ firstBothImp: {
 },
 secondBothImp: {
   pronoun: 'secondPerson',
+  pronounNumberMin: 3,
+  pronounNumberMax: 5,
   regularity: 'both',
   tense: 'imperfect',
   conjugated: [],
@@ -78,6 +95,8 @@ secondBothImp: {
 },
 thirdBothImp: {
   pronoun: 'thirdPerson',
+  pronunNumberMin: 1,
+  pronounNumberMax: pronounList.length-1,
   regularity: 'both',
   tense: 'imperfect',
   conjugated: [],
@@ -85,6 +104,8 @@ thirdBothImp: {
 },
 firstIrregPres: {
   pronoun: 'firstPerson',
+  pronounNumberMin: 4,
+  pronounNumberMax: 0,
   regularity: 'irregular',
   tense: 'present',
   conjugated: ['seja', 'fique', 'esteja', 'vá', 'dê', 'diga', 'faça', 'traga', 'possa', 'tenha', 'venha', 'ponha', 'leia', 'veja', 'saiba', 'queira', 'caiba', 'durma', 'fuja', 'ouça', 'peça', 'meça', 'perca', 'siga', 'sirva', 'sinta', 'haja', 'caia', 'saia', 'ria', 'valha', 'requeira', 'creia'],
@@ -92,6 +113,8 @@ firstIrregPres: {
 },
 secondIrregPres: {
   pronoun: 'secondPerson',
+  pronounNumberMin: 3,
+  pronounNumberMax: 5,
   regularity: 'irregular',
   tense: 'present',
   conjugated: [],
@@ -99,6 +122,8 @@ secondIrregPres: {
 },
 thirdIrregPres: {
   pronoun: 'thirdPerson',
+  pronunNumberMin: 1,
+  pronounNumberMax: pronounList.length-1,
   regularity: 'irregular',
   tense: 'present',
   conjugated: [],
@@ -106,6 +131,8 @@ thirdIrregPres: {
 },
 firstRegPres: {
   pronoun: 'firstPerson',
+  pronounNumberMin: 4,
+  pronounNumberMax: 0,
   regularity: 'regular',
   tense: 'present',
   conjugated: [],
@@ -113,6 +140,8 @@ firstRegPres: {
 },
 secondRegPres: {
   pronoun: 'secondPerson',
+  pronounNumberMin: 3,
+  pronounNumberMax: 5,
   regularity: 'regular',
   tense: 'present',
   conjugated: [],
@@ -120,6 +149,8 @@ secondRegPres: {
 },
 thirdRegPres: {
   pronoun: 'thirdPerson',
+  pronunNumberMin: 1,
+  pronounNumberMax: pronounList.length-1,
   regularity: 'regular',
   tense: 'present',
   conjugated: [],
@@ -127,6 +158,8 @@ thirdRegPres: {
 },
 firstBothPres: {
   pronoun: 'firstPerson',
+  pronounNumberMin: 4,
+  pronounNumberMax: 0,
   regularity: 'both',
   tense: 'present',
   conjugated: [],
@@ -134,6 +167,8 @@ firstBothPres: {
 },
 secondBothPres: {
   pronoun: 'secondPerson',
+  pronounNumberMin: 3,
+  pronounNumberMax: 5,
   regularity: 'both',
   tense: 'present',
   conjugated: [],
@@ -141,6 +176,8 @@ secondBothPres: {
 },
 thirdBothPres: {
   pronoun: 'thirdPerson',
+  pronunNumberMin: 1,
+  pronounNumberMax: pronounList.length-1,
   regularity: 'both',
   tense: 'present',
   conjugated: [],
@@ -148,6 +185,8 @@ thirdBothPres: {
 },
 firstIrregFut: {
   pronoun: 'firstPerson',
+  pronounNumberMin: 4,
+  pronounNumberMax: 0,
   regularity: 'irregular',
   tense: 'future',
   conjugated: ['for', 'estiver', 'for', 'der', 'disser', 'fizer', 'trouxer', 'puder', 'tiver', 'vier', 'puser', 'vir', 'souber', 'quiser', 'couber', 'houver'],
@@ -155,6 +194,8 @@ firstIrregFut: {
 },
 secondIrregFut: {
   pronoun: 'secondPerson',
+  pronounNumberMin: 3,
+  pronounNumberMax: 5,
   regularity: 'irregular',
   tense: 'future',
   conjugated: [],
@@ -162,6 +203,8 @@ secondIrregFut: {
 },
 thirdIrregFut: {
   pronoun: 'thirdPerson',
+  pronunNumberMin: 1,
+  pronounNumberMax: pronounList.length-1,
   regularity: 'irregular',
   tense: 'future',
   conjugated: [],
@@ -169,6 +212,8 @@ thirdIrregFut: {
 },
 firstRegFut: {
   pronoun: 'firstPerson',
+  pronounNumberMin: 4,
+  pronounNumberMax: 0,
   regularity: 'regular',
   tense: 'future',
   conjugated: [],
@@ -176,6 +221,8 @@ firstRegFut: {
 },
 secondRegFut: {
   pronoun: 'secondPerson',
+  pronounNumberMin: 3,
+  pronounNumberMax: 5,
   regularity: 'regular',
   tense: 'future',
   conjugated: [],
@@ -183,6 +230,8 @@ secondRegFut: {
 },
 thirdRegFut: {
   pronoun: 'thirdPerson',
+  pronunNumberMin: 1,
+  pronounNumberMax: pronounList.length-1,
   regularity: 'regular',
   tense: 'future',
   conjugated: [],
@@ -190,6 +239,8 @@ thirdRegFut: {
 },
 firstBothFut: {
   pronoun: 'firstPerson',
+  pronounNumberMin: 4,
+  pronounNumberMax: 0,
   regularity: 'both',
   tense: 'future',
   conjugated: [],
@@ -197,6 +248,8 @@ firstBothFut: {
 },
 secondBothFut: {
   pronoun: 'secondPerson',
+  pronounNumberMin: 3,
+  pronounNumberMax: 5,
   regularity: 'both',
   tense: 'future',
   conjugated: [],
@@ -204,9 +257,110 @@ secondBothFut: {
 },
 thirdBothFut: {
   pronoun: 'thirdPerson',
+  pronunNumberMin: 1,
+  pronounNumberMax: pronounList.length-1,
   regularity: 'both',
   tense: 'future',
   conjugated: [],
+  infinitive: [],
+},
+allIrregImp: {
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'imperfect',
+  regularity: 'irregular',
+  first: [],
+  second: [],
+  third: [],
+  infinitive: [],
+},
+allRegImp: {
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'imperfect',
+  regularity: 'regular',
+  first: [],
+  second: [],
+  third: [],
+  infinitive: [],
+},
+allBothImp: {
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'imperfect',
+  regularity: 'both',
+  first: [],
+  second: [],
+  third: [],
+  infinitive: [],
+},
+allIrregPres: {
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'present',
+  regularity: 'irregular',
+  first: [],
+  second: [],
+  third: [],
+  infinitive: [],
+},
+allRegPres: {
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'present',
+  regularity: 'regular',
+  first: [],
+  second: [],
+  third: [],
+  infinitive: [],
+},
+allBothPres: {
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'present',
+  regularity: 'both',
+  first: [],
+  second: [],
+  third: [],
+  infinitive: [],
+},
+allIrregFut: {
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'future',
+  regularity: 'irregular',
+  first: [],
+  second: [],
+  third: [],
+  infinitive: [],
+},
+allRegFut: {
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'future',
+  regularity: 'regular',
+  first: [],
+  second: [],
+  third: [],
+  infinitive: [],
+},
+allBothFut: {
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'future',
+  regularity: 'both',
+  first: [],
+  second: [],
+  third: [],
   infinitive: [],
 },
 };
@@ -254,7 +408,6 @@ verbs.firstBothImp.conjugated = verbs.firstRegImp.conjugated.concat(verbs.firstI
 verbs.secondBothImp.conjugated = verbs.secondRegImp.conjugated.concat(verbs.secondIrregImp.conjugated);
 verbs.thirdBothImp.conjugated = verbs.thirdRegImp.conjugated.concat(verbs.thirdIrregImp.conjugated);
 
-
 verbs.secondIrregPres.infinitive = verbs.firstIrregPres.infinitive
 verbs.thirdIrregPres.infinitive = verbs.firstIrregPres.infinitive
 verbs.secondIrregPres.conjugated = verbs.firstIrregPres.conjugated.map((word) => 
@@ -293,6 +446,7 @@ verbs.thirdBothPres.conjugated = verbs.thirdRegPres.conjugated.concat(verbs.thir
 
 verbs.firstIrregFut.infinitive = verbs.firstIrregImp.infinitive
 verbs.secondIrregFut.infinitive = verbs.firstIrregImp.infinitive
+verbs.thirdIrregFut.infinitive = verbs.firstIrregImp.infinitive
 verbs.secondIrregFut.infinitive = verbs.firstIrregImp.infinitive
 verbs.secondIrregFut.conjugated = verbs.firstIrregFut.conjugated.map((word) => 
 word += 'em'
@@ -303,7 +457,7 @@ verbs.thirdIrregFut.conjugated = verbs.firstIrregFut.conjugated.map((word) =>
 
 verbs.firstRegFut.infinitive = verbs.firstRegImp.infinitive
 verbs.secondRegFut.infinitive = verbs.firstRegImp.infinitive
-verbs.secondRegFut.infinitive = verbs.firstRegImp.infinitive
+verbs.thirdRegFut.infinitive = verbs.firstRegImp.infinitive
 verbs.firstRegFut.conjugated = verbs.firstRegFut.infinitive.map((word) => 
 word.slice(1,word.length-1)
 );
@@ -321,42 +475,56 @@ verbs.firstBothFut.conjugated = verbs.firstRegFut.conjugated.concat(verbs.firstI
 verbs.secondBothFut.conjugated = verbs.secondRegFut.conjugated.concat(verbs.secondIrregFut.conjugated);
 verbs.thirdBothFut.conjugated = verbs.thirdRegFut.conjugated.concat(verbs.thirdIrregFut.conjugated);
 
+verbs.allIrregImp.infinitive = verbs.firstIrregImp.infinitive
+verbs.allRegImp.infinitive = verbs.firstRegImp.infinitive
+verbs.allBothImp.infinitive = verbs.firstRegImp.infinitive.concat(verbs.firstIrregImp.infinitive)
+verbs.allIrregImp.first = verbs.firstIrregImp.conjugated
+verbs.allIrregImp.second = verbs.secondIrregImp.conjugated
+verbs.allIrregImp.third = verbs.thirdIrregImp.conjugated
+verbs.allRegImp.first = verbs.firstRegImp.conjugated
+verbs.allRegImp.second = verbs.secondRegImp.conjugated
+verbs.allRegImp.third = verbs.thirdRegImp.conjugated
+verbs.allBothImp.first = verbs.firstBothImp.conjugated
+verbs.allBothImp.second = verbs.secondBothImp.conjugated
+verbs.allBothImp.third = verbs.thirdBothImp.conjugated
 
+verbs.allIrregPres.infinitive = verbs.firstIrregPres.infinitive
+verbs.allRegPres.infinitive = verbs.firstRegPres.infinitive
+verbs.allBothPres.infinitive = verbs.firstRegPres.infinitive.concat(verbs.firstIrregPres.infinitive)
+verbs.allIrregPres.first = verbs.firstIrregPres.conjugated
+verbs.allIrregPres.second = verbs.secondIrregPres.conjugated
+verbs.allIrregPres.third = verbs.thirdIrregPres.conjugated
+verbs.allRegPres.first = verbs.firstRegPres.conjugated
+verbs.allRegPres.second = verbs.secondRegPres.conjugated
+verbs.allRegPres.third = verbs.thirdRegPres.conjugated
+verbs.allBothPres.first = verbs.firstBothPres.conjugated
+verbs.allBothPres.second = verbs.secondBothPres.conjugated
+verbs.allBothPres.third = verbs.thirdBothPres.conjugated
 
-// get radio input
-var verbAnswer = document.querySelectorAll('input[type="radio"');
-function getVerbAnswer(){
-  for (let i = 0; i < verbAnswer.length; i++) {
-    if(verbAnswer[i].checked){
-      preferencesResults.unshift(verbAnswer[i].value);
-    };
-    if(preferencesResults.length>3){
-      preferencesResults.length = 3;
-    }
-  }
-msgHidden = false;
-reset();
-openSidebarLeft();
+verbs.allIrregFut.infinitive = verbs.firstIrregFut.infinitive
+verbs.allRegFut.infinitive = verbs.firstRegFut.infinitive
+verbs.allBothFut.infinitive = verbs.firstRegFut.infinitive.concat(verbs.firstIrregFut.infinitive)
+verbs.allIrregFut.first = verbs.firstIrregFut.conjugated
+verbs.allIrregFut.second = verbs.secondIrregFut.conjugated
+verbs.allIrregFut.third = verbs.thirdIrregFut.conjugated
+verbs.allRegFut.first = verbs.firstRegFut.conjugated
+verbs.allRegFut.second = verbs.secondRegFut.conjugated
+verbs.allRegFut.third = verbs.thirdRegFut.conjugated
+verbs.allBothFut.first = verbs.firstBothFut.conjugated
+verbs.allBothFut.second = verbs.secondBothFut.conjugated
+verbs.allBothFut.third = verbs.thirdBothFut.conjugated
+
+//contains all function to check preferences results
+function containsAll(arr, values) {
+  return values.every(value => {
+    return arr.includes(value);
+  });
 }
 
-preferencesSubmitButton.addEventListener('click', getVerbAnswer);
-
-//check pref results 
-preferencesSubmitButton.onclick = () => {
-for (var key in verbs){
-  if(containsAll(preferencesResults, [verbs[key].pronoun, verbs[key].regularity, verbs[key].tense])){
-    console.log(verbs[key].conjugated[3])
-  }
-};
-}
-//can do something like if randomPronoun is 1-4, randomPronoun = 'first', and then add in there, if containsall(~~~) && randomPronoun = verbs[key].pronoun
-//it worked
-// var randomIrregVerb=Math.floor(Math.random()*verbs.firstIrregImp.infinitive.length);
-// var randomRegVerb=Math.floor(Math.random()*verbs.firstRegImp.infinitive.length);
 //First round
 var randomBothPresVerb=Math.floor(Math.random()*verbs.firstBothPres.infinitive.length);
 infinitiveText.textContent=verbs.firstBothPres.infinitive[randomBothPresVerb];
-sentOne.textContent=`${desireVerb[randomDesire]} que ${pronoun[randomPronoun]}`;
+sentOne.textContent=`${desireVerb[randomDesire]} que ${pronounList[randomPronoun]}`;
 if (randomPronoun>4 && randomPronoun<8){
 var correctAnswer=verbs.secondBothPres.conjugated[randomBothPresVerb];
 }
@@ -366,7 +534,6 @@ else if(randomPronoun>7){
 else{
  correctAnswer=verbs.firstBothPres.conjugated[randomBothPresVerb];
 }
-
 
 //Check
 function check(event){
@@ -391,272 +558,58 @@ document.addEventListener('keypress', function (e) {
   }
 });
 
-//contains all function to check preferences results
-function containsAll(arr, values) {
-  return values.every(value => {
-    return arr.includes(value);
-  });
-}
-
 //Reset game
 function reset(){
   if(msgHidden === true) {
     return;
 }
-if (preferencesResults[1]==='irregular'){
-   randomVerb=Math.floor(Math.random()*infinitive.length);
-  infinitiveText.textContent=infinitive[randomVerb];
+for (var key in verbs){
+  if(containsAll(preferencesResults, [verbs[key].pronoun, verbs[key].regularity, verbs[key].tense])){
+    randomPronoun=Math.floor(Math.random()*(verbs[key].pronounNumberMin))+verbs[key].pronounNumberMax
+    var randomSpecializedNumber=Math.floor(Math.random()*verbs[key].infinitive.length)
+    infinitiveText.textContent=verbs[key].infinitive[randomSpecializedNumber]
+    if (preferencesResults[0] !== 'allPersons'){
+    correctAnswer = verbs[key].conjugated[randomSpecializedNumber]
+    }
+    if(preferencesResults[0]==='thirdPerson'){
+      randomPronoun=8;
+    }
+    if(preferencesResults[2]==='imperfect'){
+      sentOne.textContent='Se ' + pronounList[randomPronoun];
+      verbSelected.style.display = 'block';
+      verbSelected.innerHTML = 'Verb tense: Subjunctive Imperfect'; 
+    }
+    else if(preferencesResults[2]==='present'){
+      randomDesire=Math.floor(Math.random()*desireVerb.length);
+      sentOne.textContent=`${desireVerb[randomDesire]} que ${pronounList[randomPronoun]}`;
+      verbSelected.style.display = 'block';
+      verbSelected.innerHTML = 'Verb tense: Subjunctive Present'; 
+    }
+    else if(preferencesResults[2]==='future'){
+      sentOne.textContent=futSentStarts[Math.floor(Math.random()*2)] + pronounList[randomPronoun];
+      verbSelected.style.display = 'block';
+      verbSelected.innerHTML = 'Verb tense: Subjunctive Future'; 
+    }
+    else {
+      sentOne.textContent=`${desireVerb[randomDesire]} que ${pronounList[randomPronoun]}`;
+    };
+  if(preferencesResults[0] === 'allPersons'){
+    console.log(verbs[key].infinitive)
+  if (randomPronoun>4 && randomPronoun<8){
+    correctAnswer=verbs[key].second[randomSpecializedNumber]
+    infinitiveText.textContent=verbs[key].infinitive[randomSpecializedNumber]
+    }
+    else if(randomPronoun>7){
+      correctAnswer=verbs[key].third[randomSpecializedNumber]
+      infinitiveText.textContent=verbs[key].infinitive[randomSpecializedNumber]
+    }
+    else{
+     correctAnswer=verbs[key].first[randomSpecializedNumber]
+     infinitiveText.textContent=verbs[key].infinitive[randomSpecializedNumber]
+    }
 }
-else if(preferencesResults[1]==='regular'){
-   randomRegVerb=Math.floor(Math.random()*regInfinitive.length);
-  infinitiveText.textContent=regInfinitiveUnconjugated[randomRegVerb]; 
-}
-else if(preferencesResults[1]==='both'){
-   momboRandomVerb=Math.floor(Math.random()*momboInfinitives.length);
-  infinitiveText.textContent=momboInfinitives[momboRandomVerb];
-}
-else{
-   momboRandomVerb=Math.floor(Math.random()*momboInfinitives.length);
-  infinitiveText.textContent=momboInfinitives[momboRandomVerb];
+  }
 };
-if(preferencesResults[0]==='firstPerson'){
-  randomPronoun=Math.floor(Math.random()*4);
-}
-else if(preferencesResults[0]==='secondPerson'){
-  randomPronoun=Math.floor(Math.random()*(3)+5);
-}
-else if(preferencesResults[0]==='thirdPerson'){
-  randomPronoun=8;
-}
-else{
-  randomPronoun=Math.floor(Math.random()*8);
-};
-randomDesire=Math.floor(Math.random()*desireVerb.length);
-if(preferencesResults[2]==='imperfect'){
-  sentOne.textContent='Se ' + pronoun[randomPronoun];
-  verbSelected.style.display = 'block';
-  verbSelected.innerHTML = 'Verb tense: Subjunctive Imperfect'; 
-}
-else if(preferencesResults[2]==='present'){
-  sentOne.textContent=`${desireVerb[randomDesire]} que ${pronoun[randomPronoun]}`;
-  verbSelected.style.display = 'block';
-  verbSelected.innerHTML = 'Verb tense: Subjunctive Present'; 
-}
-else if(preferencesResults[2]==='future'){
-  sentOne.textContent=futSentStarts[Math.floor(Math.random()*2)] + pronoun[randomPronoun];
-  verbSelected.style.display = 'block';
-  verbSelected.innerHTML = 'Verb tense: Subjunctive Imperfect'; 
-}
-else {
-  sentOne.textContent=`${desireVerb[randomDesire]} que ${pronoun[randomPronoun]}`;
-};
-if (containsAll(preferencesResults, ['firstPerson','irregular','imperfect'])){
-  var randomImpIrreg=Math.floor(Math.random()*impIrregInf.length)
-  correctAnswer=impSubj[randomImpIrreg];
-  infinitiveText.textContent=impIrregInf[randomImpIrreg]
-}
-else if (containsAll(preferencesResults, ['firstPerson','irregular','present'])){
-  correctAnswer=subj[randomVerb];
-}
-else if (containsAll(preferencesResults, ['firstPerson','irregular','future'])){
-  var randomImpIrreg=Math.floor(Math.random()*impIrregInf.length)
-  correctAnswer=futSubj[randomImpIrreg];
-  infinitiveText.textContent=impIrregInf[randomImpIrreg]
-}
-else if (containsAll(preferencesResults, ['firstPerson','regular','imperfect'])){
-  correctAnswer=regSubjImp[randomRegVerb];
-}
-else if (containsAll(preferencesResults, ['firstPerson','regular','present'])){
-  correctAnswer=regSubj[randomRegVerb];
-}
-else if (containsAll(preferencesResults, ['firstPerson','regular','future'])){
-  correctAnswer=regFutSubj[randomRegVerb];
-}
-else if (containsAll(preferencesResults,['firstPerson','both','imperfect'])){
-  correctAnswer=momboImpSubj[momboRandomVerb];
-}
-else if (containsAll(preferencesResults, ['firstPerson','both','present'])){
-  correctAnswer=momboSubj[momboRandomVerb];
-}
-else if (containsAll(preferencesResults, ['firstPerson','both','future'])){
-  correctAnswer=momboFutSubj[momboRandomVerb];
-}
-else if (containsAll(preferencesResults, ['secondPerson','irregular','imperfect'])){
-  var randomImpIrreg=Math.floor(Math.random()*impIrregInf.length)
-  correctAnswer=impSubjTwo[randomImpIrreg];
-  infinitiveText.textContent=impIrregInf[randomImpIrreg]
-}
-else if (containsAll(preferencesResults, ['secondPerson','irregular','present'])){
-  correctAnswer=subjTwo[randomVerb];
-}
-else if (containsAll(preferencesResults, ['secondPerson','irregular','future'])){
-  var randomImpIrreg=Math.floor(Math.random()*impIrregInf.length)
-  correctAnswer=futSubjTwo[randomImpIrreg];
-  infinitiveText.textContent=impIrregInf[randomImpIrreg]
-}
-else if (containsAll(preferencesResults, ['secondPerson','regular','imperfect'])){
-  correctAnswer=regSubjImpTwo[randomRegVerb];
-}
-else if (containsAll(preferencesResults, ['secondPerson','regular','present'])){
-  correctAnswer=regSubjTwo[randomRegVerb];
-}
-else if (containsAll(preferencesResults, ['secondPerson','regular','future'])){
-  correctAnswer=regFutSubjTwo[randomRegVerb];
-}
-else if (containsAll(preferencesResults, ['secondPerson','both','imperfect'])){
-  correctAnswer=momboImpSubjTwo[momboRandomVerb];
-}
-else if (containsAll(preferencesResults, ['secondPerson','both','present'])){
-  correctAnswer=momboSubjTwo[momboRandomVerb];
-}
-else if (containsAll(preferencesResults, ['secondPerson','both','future'])){
-  correctAnswer=momboFutSubjTwo[momboRandomVerb];
-}
-else if (containsAll(preferencesResults, ['thirdPerson','irregular','imperfect'])){
-  var randomImpIrreg=Math.floor(Math.random()*impIrregInf.length)
-  correctAnswer=impSubjThree[randomImpIrreg];
-  infinitiveText.textContent=impIrregInf[randomImpIrreg]
-}
-else if (containsAll(preferencesResults, ['thirdPerson','irregular','present'])){
-  correctAnswer=subjThree[randomVerb];
-}
-else if (containsAll(preferencesResults, ['thirdPerson','irregular','future'])){
-  var randomImpIrreg=Math.floor(Math.random()*impIrregInf.length)
-  correctAnswer=futSubjThree[randomImpIrreg];
-  infinitiveText.textContent=impIrregInf[randomImpIrreg]
-}
-else if (containsAll(preferencesResults, ['thirdPerson','regular','imperfect'])){
-  correctAnswer=regSubjImpThree[randomRegVerb];
-}
-else if (containsAll(preferencesResults, ['thirdPerson','regular','present'])){
-  correctAnswer=regSubjThree[randomRegVerb];
-}
-else if (containsAll(preferencesResults, ['thirdPerson','regular','future'])){
-  correctAnswer=regFutSubjThree[randomRegVerb];
-}
-else if (containsAll(preferencesResults, ['thirdPerson','both','imperfect'])){
-  correctAnswer=momboImpSubjThree[momboRandomVerb];
-}
-else if (containsAll(preferencesResults, ['thirdPerson','both','present'])){
-  correctAnswer=momboSubjThree[momboRandomVerb];
-}
-else if (containsAll(preferencesResults, ['thirdPerson','both','future'])){
-  correctAnswer=momboFutSubjThree[momboRandomVerb];
-}
-else if (containsAll(preferencesResults, ['allPersons','irregular','imperfect'])){
-  var randomImpIrreg=Math.floor(Math.random()*impIrregInf.length)
-  infinitiveText.textContent=impIrregInf[randomImpIrreg]
-  if (randomPronoun>4 && randomPronoun<8){
-    correctAnswer=impSubjTwo[randomImpIrreg];
-   }
-   else if(randomPronoun>7){
-    correctAnswer=impSubjThree[randomImpIrreg];
-   }
-   else {
-    correctAnswer=impSubj[randomImpIrreg];
-   }
-}
-else if (containsAll(preferencesResults, ['allPersons','irregular','present'])){
-  if (randomPronoun>4 && randomPronoun<8){
-    correctAnswer=subjTwo[randomVerb];
-   }
-   else if(randomPronoun>7){
-     correctAnswer=subjThree[randomVerb];
-   }
-   else {
-    correctAnswer=subj[randomVerb];
-   }
-}
-else if (containsAll(preferencesResults, ['allPersons','irregular','future'])){
-  var randomImpIrreg=Math.floor(Math.random()*impIrregInf.length)
-  infinitiveText.textContent=impIrregInf[randomImpIrreg]
-  if (randomPronoun>4 && randomPronoun<8){
-    correctAnswer=futSubjTwo[randomImpIrreg];
-   }
-   else if(randomPronoun>7){
-    correctAnswer=futSubjThree[randomImpIrreg];
-   }
-   else {
-    correctAnswer=futSubj[randomImpIrreg];
-   };
-}
-else if (containsAll(preferencesResults, ['allPersons','regular','imperfect'])){
-  if (randomPronoun>4 && randomPronoun<8){
-    correctAnswer=regSubjImpTwo[randomRegVerb];
-   }
-   else if(randomPronoun>7){
-     correctAnswer=regSubjImpThree[randomRegVerb];
-   }
-   else {
-    correctAnswer=regSubjImp[randomRegVerb];
-   }
-}
-else if (containsAll(preferencesResults, ['allPersons','regular','present'])){
-  if (randomPronoun>4 && randomPronoun<8){
-    correctAnswer=regSubjTwo[randomVerb];
-   }
-   else if(randomPronoun>7){
-     correctAnswer=regSubjThree[randomVerb];
-   }
-   else {
-    correctAnswer=regSubj[randomVerb];
-   }
-}
-else if (containsAll(preferencesResults, ['allPersons','regular','future'])){
-  if (randomPronoun>4 && randomPronoun<8){
-    correctAnswer=regFutSubjTwo[randomRegVerb];
-   }
-   else if(randomPronoun>7){
-     correctAnswer=regFutSubjThree[randomRegVerb];
-   }
-   else {
-    correctAnswer=regFutSubj[randomRegVerb];
-   }
-}
-else if (containsAll(preferencesResults, ['allPersons','both','imperfect'])){
-  if (randomPronoun>4 && randomPronoun<8){
-    correctAnswer=momboImpSubjTwo[momboRandomVerb];
-   }
-   else if(randomPronoun>7){
-     correctAnswer=momboImpSubjThree[momboRandomVerb];
-   }
-   else {
-    correctAnswer=momboImpSubj[momboRandomVerb];
-   }
-}
-else if (containsAll(preferencesResults, ['allPersons','both','present'])){
-  if (randomPronoun>4 && randomPronoun<8){
-    correctAnswer=momboSubjTwo[momboRandomVerb];
-   }
-   else if(randomPronoun>7){
-     correctAnswer=momboSubjThree[momboRandomVerb];
-   }
-   else {
-    correctAnswer=momboSubj[momboRandomVerb];
-   }
-}
-else if (containsAll(preferencesResults, ['allPersons','both','future'])){
-  if (randomPronoun>4 && randomPronoun<8){
-    correctAnswer=momboFutSubjTwo[momboRandomVerb];
-   }
-   else if(randomPronoun>7){
-     correctAnswer=momboFutSubjThree[momboRandomVerb];
-   }
-   else {
-    correctAnswer=momboFutSubj[momboRandomVerb];
-   }
-}
-else if (containsAll(preferencesResults, [])){
-  if (randomPronoun>4 && randomPronoun<8){
-    correctAnswer=momboSubjTwo[momboRandomVerb];
-   }
-   else if(randomPronoun>7){
-     correctAnswer=momboSubjThree[momboRandomVerb];
-   }
-   else {
-    correctAnswer=momboSubj[momboRandomVerb];
-   }
-}
   msg.style.display = 'none';
   playAgain.style.display='none';
   input.value='';
@@ -665,23 +618,19 @@ else if (containsAll(preferencesResults, [])){
 }
 
 
-//Spacebar trigger reset
 
+//Spacebar trigger reset
 document.body.addEventListener('keyup', event => {
   if (event.code === 'Space') {
    reset();
   }
 })
-
-
-
 //Spacebar not trigger check function
 submitButton.addEventListener('focus', function() {
       this.blur();
   })
 
 // toggle open sidebar left
-
 function openSidebarLeft (){
   if (sidebarLeft.style.display === 'block') {
   sidebarLeft.style.display = 'none';
@@ -696,7 +645,6 @@ function openSidebarLeft (){
 preferencesButton.addEventListener('click', openSidebarLeft);
 
 // toggle open sidebar right
-
 function openSidebarRight (){
   if (sidebarRight.style.display === 'block') {
   sidebarRight.style.display = 'none';
@@ -710,10 +658,25 @@ function openSidebarRight (){
 
 cheatSheetButton.addEventListener('click', openSidebarRight);
 
+// get radio input
+var verbAnswer = document.querySelectorAll('input[type="radio"');
+function getVerbAnswer(){
+  for (let i = 0; i < verbAnswer.length; i++) {
+    if(verbAnswer[i].checked){
+      preferencesResults.unshift(verbAnswer[i].value);
+    };
+    if(preferencesResults.length>3){
+      preferencesResults.length = 3;
+    }
+  }
+msgHidden = false;
+reset();
+openSidebarLeft();
+}
 
+preferencesSubmitButton.addEventListener('click', getVerbAnswer);
 
 //change cheat sheet 
-
 var firstTenseButton=document.getElementById('first-tense-button')
 var middleTenseButton=document.getElementById('middle-tense-button')
 var lastTenseButton = document.getElementById('last-tense-button')
