@@ -39,11 +39,11 @@ body {
   .side{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
   }
   #box-left{
     margin-right:20px;
-    
+    margin-left: 60px;
   }
  
   .sidebar-button{
@@ -72,26 +72,12 @@ body {
 
 #sidebar-left{
     display: none;
-    
   }
-#tense-settings-button-wrapper{
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  display: inline-flex;
-}
 #indicative-settings{
     display: none;
   }
-#subjunctive-settings{
-  margin-left: -60px;
-}
 
-#settings-wrapper{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
+
 
 
 .tense-settings-button{

@@ -20,8 +20,8 @@
         <div id="sidebar-left" class="sidebar">
         <div id="settings-wrapper">
         <div id="tense-settings-button-wrapper">
-            <button id="subjunctive-button" class="tense-settings-button active">Subjunctive</button>
-            <button id="indicative-button" class="tense-settings-button">Indicative</button>
+            <button id="subjunctive" class="tense-settings-button active">Subjunctive</button>
+            <button id="indicative" class="tense-settings-button">Indicative</button>
         </div>    
         <div id="subjunctive-settings">
             <h4><i>Tenses</i></h4>
@@ -71,56 +71,56 @@
         <div id="indicative-settings">
             <h4><i>Tenses</i></h4>
             <label>
-            <input type="radio" name="indicative-tenseAnswer" value="indicative-imperfect">
+            <input class='indicative-input' type="radio" name="indicative-tenseAnswer" value="imperfect">
             Imperfect only</label>
             <label>
                 <br>
-            <input type="radio" name="indicative-tenseAnswer" checked value="indicative-perfect">
+            <input class='indicative-input' type="radio" name="indicative-tenseAnswer" checked value="perfect">
             Perfect only (default)</label>
             <br>
             <label>
-            <input type="radio" name="indicative-tenseAnswer" value="indicative-present">
+            <input class='indicative-input' type="radio" name="indicative-tenseAnswer" value="present">
             Present only</label>
             <br>
             <label>
-            <input type="radio" name="indicative-tenseAnswer" value="indicative-conditional">
+            <input class='indicative-input' type="radio" name="indicative-tenseAnswer" value="conditional">
             Future of the past (conditional) only</label>
             <br>
             <h4><i>Verbs</i></h4>
             <label>
-            <input type="radio" name="indicative-verbAnswer" value="irregular">
+            <input class='indicative-input' type="radio" name="indicative-verbAnswer" value="irregular">
             Irregular only</label>
             <label>
                 <br>
-            <input type="radio" name="indicative-verbAnswer" value="regular">
+            <input class='indicative-input' type="radio" name="indicative-verbAnswer" value="regular">
             Regular only </label>
             <label>
                 <br>
-            <input type="radio" name="indicative-verbAnswer" checked value="both">
+            <input class='indicative-input' type="radio" name="indicative-verbAnswer" checked value="both">
             Both (default)</label>
             <h4><i>Pronouns</i></h4>
             <label>
-            <input type="radio" name="indicative-pronounAnswer" value="firstPerson">
+            <input class='indicative-input' type="radio" name="indicative-pronounAnswer" value="firstPerson">
             Eu/você/ele/ela only</label>
             <label>
                 <br>
             <label>
-            <input type="radio" name="indicative-pronounAnswer" value="vocePerson">
+            <input class='indicative-input' type="radio" name="indicative-pronounAnswer" value="vocePerson">
             Você/ele/ela only</label>
             <label>
                 <br>
-            <input type="radio" name="indicative-pronounAnswer" value="secondPerson">
+            <input class='indicative-input' type="radio" name="indicative-pronounAnswer" value="secondPerson">
             Vocês/eles/elas only </label>
             <label>
                 <br>
-            <input type="radio" name="indicative-pronounAnswer" value="thirdPerson">
+            <input class='indicative-input' type="radio" name="indicative-pronounAnswer" value="thirdPerson">
            Nós only</label>
             <br>
             <label>
-            <input type="radio" name="indicative-pronounAnswer" checked value="allPersons">
+            <input class='indicative-input' type="radio" name="indicative-pronounAnswer" checked value="allPersons">
             All (default)</label>
             <br><br>
-            <input id="preferencesSubmitButton" type="submit">
+            <input id="indicativePreferencesSubmitButton" type="submit">
         </div>
     </div>
     </div>

@@ -24,6 +24,7 @@ var preferencesSubmitButton = document.getElementById('preferencesSubmitButton')
 //OBJECTS
 var verbs = {
 firstIrregImp: {
+  mode: 'subjunctive',
   pronoun: 'firstPerson',
   pronounNumberMin: 4,
   pronounNumberMax: 0,
@@ -33,6 +34,7 @@ firstIrregImp: {
   infinitive: ['(ser)', '(estar)', '(ir)', '(dar)', '(dizer)', '(fazer)', '(trazer)', '(poder)', '(ter)', '(vir)', '(pôr)', '(ver)', '(saber)', '(querer)', '(caber)', '(haver)'], 
 },
 secondIrregImp: {
+  mode: 'subjunctive',
   pronoun: 'secondPerson',
   pronounNumberMin: 3,
   pronounNumberMax: 5,
@@ -42,6 +44,7 @@ secondIrregImp: {
   infinitive: [],
 },
 thirdIrregImp: {
+  mode: 'subjunctive',
   pronoun: 'thirdPerson',
   pronunNumberMin: 1,
   pronounNumberMax: pronounList.length-1,
@@ -51,6 +54,7 @@ thirdIrregImp: {
   infinitive: [],
 },
 firstRegImp: {
+  mode: 'subjunctive',
   pronoun: 'firstPerson',
   pronounNumberMin: 4,
   pronounNumberMax: 0,
@@ -60,6 +64,7 @@ firstRegImp: {
   infinitive: ['(comer)', '(matar)', '(iludir)', '(falar)', '(amar)', '(beber)', '(cantar)', '(comprar)', '(estudar)', '(vender)', '(viver)', '(achar)', '(acabar)', '(andar)', '(chamar)', '(encontrar)', '(morar)', '(morrer)', '(pensar)', '(olhar)', '(tomar)', '(voltar)', '(deixar)', '(levar)', '(dever)', '(existir)', '(receber)', '(trabalhar)', '(decidir)', '(fechar)', '(mandar)', '(perceber)', '(gostar)', '(usar)', '(esperar)', '(correr)', '(mostrar)', '(escrever)', '(abrir)', '(precisar)'],
 },
 secondRegImp: {
+  mode: 'subjunctive',
   pronoun: 'secondPerson',
   pronounNumberMin: 3,
   pronounNumberMax: 5,
@@ -69,6 +74,7 @@ secondRegImp: {
   infinitive: [],
 },
 thirdRegImp: {
+  mode: 'subjunctive',
   pronoun: 'thirdPerson',
   pronunNumberMin: 1,
   pronounNumberMax: pronounList.length-1,
@@ -78,6 +84,7 @@ thirdRegImp: {
   infinitive: [],
 },
 firstBothImp: {
+  mode: 'subjunctive',
   pronoun: 'firstPerson',
   pronounNumberMin: 4,
   pronounNumberMax: 0,
@@ -87,6 +94,7 @@ firstBothImp: {
   infinitive: [],
 },
 secondBothImp: {
+  mode: 'subjunctive',
   pronoun: 'secondPerson',
   pronounNumberMin: 3,
   pronounNumberMax: 5,
@@ -96,6 +104,7 @@ secondBothImp: {
   infinitive: [],
 },
 thirdBothImp: {
+  mode: 'subjunctive',
   pronoun: 'thirdPerson',
   pronunNumberMin: 1,
   pronounNumberMax: pronounList.length-1,
@@ -105,6 +114,7 @@ thirdBothImp: {
   infinitive: [],
 },
 firstIrregPres: {
+  mode: 'subjunctive',
   pronoun: 'firstPerson',
   pronounNumberMin: 4,
   pronounNumberMax: 0,
@@ -114,6 +124,7 @@ firstIrregPres: {
   infinitive: ['(ser)', '(ficar)', '(estar)', '(ir)', '(dar)', '(dizer)', '(fazer)', '(trazer)', '(poder)', '(ter)', '(vir)', '(pôr)', '(ler)', '(ver)', '(saber)', '(querer)', '(caber)', '(dormir)', '(fugir)', '(ouvir)', '(pedir)', '(medir)', '(perder)', '(seguir)', '(servir)', '(sentir)', '(haver)', '(cair)', '(sair)', '(rir)', '(valer)', '(requerer)', '(crer)'],
 },
 secondIrregPres: {
+  mode: 'subjunctive',
   pronoun: 'secondPerson',
   pronounNumberMin: 3,
   pronounNumberMax: 5,
@@ -123,6 +134,7 @@ secondIrregPres: {
   infinitive: [],
 },
 thirdIrregPres: {
+  mode: 'subjunctive',
   pronoun: 'thirdPerson',
   pronunNumberMin: 1,
   pronounNumberMax: pronounList.length-1,
@@ -132,6 +144,7 @@ thirdIrregPres: {
   infinitive: [],
 },
 firstRegPres: {
+  mode: 'subjunctive',
   pronoun: 'firstPerson',
   pronounNumberMin: 4,
   pronounNumberMax: 0,
@@ -150,6 +163,7 @@ secondRegPres: {
   infinitive: [],
 },
 thirdRegPres: {
+  mode: 'subjunctive',
   pronoun: 'thirdPerson',
   pronunNumberMin: 1,
   pronounNumberMax: pronounList.length-1,
@@ -159,6 +173,7 @@ thirdRegPres: {
   infinitive: [],
 },
 firstBothPres: {
+  mode: 'subjunctive',
   pronoun: 'firstPerson',
   pronounNumberMin: 4,
   pronounNumberMax: 0,
@@ -168,6 +183,7 @@ firstBothPres: {
   infinitive: [],
 },
 secondBothPres: {
+  mode: 'subjunctive',
   pronoun: 'secondPerson',
   pronounNumberMin: 3,
   pronounNumberMax: 5,
@@ -177,6 +193,7 @@ secondBothPres: {
   infinitive: [],
 },
 thirdBothPres: {
+  mode: 'subjunctive',
   pronoun: 'thirdPerson',
   pronunNumberMin: 1,
   pronounNumberMax: pronounList.length-1,
@@ -186,6 +203,7 @@ thirdBothPres: {
   infinitive: [],
 },
 firstIrregFut: {
+  mode: 'subjunctive',
   pronoun: 'firstPerson',
   pronounNumberMin: 4,
   pronounNumberMax: 0,
@@ -195,6 +213,7 @@ firstIrregFut: {
   infinitive: [],
 },
 secondIrregFut: {
+  mode: 'subjunctive',
   pronoun: 'secondPerson',
   pronounNumberMin: 3,
   pronounNumberMax: 5,
@@ -204,6 +223,7 @@ secondIrregFut: {
   infinitive: [],
 },
 thirdIrregFut: {
+  mode: 'subjunctive',
   pronoun: 'thirdPerson',
   pronunNumberMin: 1,
   pronounNumberMax: pronounList.length-1,
@@ -213,6 +233,7 @@ thirdIrregFut: {
   infinitive: [],
 },
 firstRegFut: {
+  mode: 'subjunctive',
   pronoun: 'firstPerson',
   pronounNumberMin: 4,
   pronounNumberMax: 0,
@@ -222,6 +243,7 @@ firstRegFut: {
   infinitive: [],
 },
 secondRegFut: {
+  mode: 'subjunctive',
   pronoun: 'secondPerson',
   pronounNumberMin: 3,
   pronounNumberMax: 5,
@@ -231,6 +253,7 @@ secondRegFut: {
   infinitive: [],
 },
 thirdRegFut: {
+  mode: 'subjunctive',
   pronoun: 'thirdPerson',
   pronunNumberMin: 1,
   pronounNumberMax: pronounList.length-1,
@@ -240,6 +263,7 @@ thirdRegFut: {
   infinitive: [],
 },
 firstBothFut: {
+  mode: 'subjunctive',
   pronoun: 'firstPerson',
   pronounNumberMin: 4,
   pronounNumberMax: 0,
@@ -249,6 +273,7 @@ firstBothFut: {
   infinitive: [],
 },
 secondBothFut: {
+  mode: 'subjunctive',
   pronoun: 'secondPerson',
   pronounNumberMin: 3,
   pronounNumberMax: 5,
@@ -258,6 +283,7 @@ secondBothFut: {
   infinitive: [],
 },
 thirdBothFut: {
+  mode: 'subjunctive',
   pronoun: 'thirdPerson',
   pronunNumberMin: 1,
   pronounNumberMax: pronounList.length-1,
@@ -267,6 +293,7 @@ thirdBothFut: {
   infinitive: [],
 },
 allIrregImp: {
+  mode: 'subjunctive',
   pronoun: 'allPersons',
   pronounNumberMin: pronounList.length-1,
   pronounNumberMax: 1,
@@ -278,6 +305,7 @@ allIrregImp: {
   infinitive: [],
 },
 allRegImp: {
+  mode: 'subjunctive',
   pronoun: 'allPersons',
   pronounNumberMin: pronounList.length-1,
   pronounNumberMax: 1,
@@ -289,6 +317,7 @@ allRegImp: {
   infinitive: [],
 },
 allBothImp: {
+  mode: 'subjunctive',
   pronoun: 'allPersons',
   pronounNumberMin: pronounList.length-1,
   pronounNumberMax: 1,
@@ -300,6 +329,7 @@ allBothImp: {
   infinitive: [],
 },
 allIrregPres: {
+  mode: 'subjunctive',
   pronoun: 'allPersons',
   pronounNumberMin: pronounList.length-1,
   pronounNumberMax: 1,
@@ -311,6 +341,7 @@ allIrregPres: {
   infinitive: [],
 },
 allRegPres: {
+  mode: 'subjunctive',
   pronoun: 'allPersons',
   pronounNumberMin: pronounList.length-1,
   pronounNumberMax: 1,
@@ -322,6 +353,7 @@ allRegPres: {
   infinitive: [],
 },
 allBothPres: {
+  mode: 'subjunctive',
   pronoun: 'allPersons',
   pronounNumberMin: pronounList.length-1,
   pronounNumberMax: 1,
@@ -333,6 +365,7 @@ allBothPres: {
   infinitive: [],
 },
 allIrregFut: {
+  mode: 'subjunctive',
   pronoun: 'allPersons',
   pronounNumberMin: pronounList.length-1,
   pronounNumberMax: 1,
@@ -344,6 +377,7 @@ allIrregFut: {
   infinitive: [],
 },
 allRegFut: {
+  mode: 'subjunctive',
   pronoun: 'allPersons',
   pronounNumberMin: pronounList.length-1,
   pronounNumberMax: 1,
@@ -355,6 +389,7 @@ allRegFut: {
   infinitive: [],
 },
 allBothFut: {
+  mode: 'subjunctive',
   pronoun: 'allPersons',
   pronounNumberMin: pronounList.length-1,
   pronounNumberMax: 1,
@@ -367,6 +402,7 @@ allBothFut: {
 },
 //INDICATIVE
 indFirstIrregImp: {
+  mode: 'indicative',
   pronoun: 'firstPerson',
   pronounNumberMin: 0,
   pronounNumberMax: 0,
@@ -376,6 +412,7 @@ indFirstIrregImp: {
   infinitive: ['(ir)', '(ser)', '(estar)', '(ter)', '(vir)', '(pôr)'],
 },
 indVoceIrregImp: {
+  mode: 'indicative',
   pronoun: 'vocePerson',
   pronounNumberMin: 3,
   pronounNumberMax: 1,
@@ -385,6 +422,7 @@ indVoceIrregImp: {
   infinitive: ['(ir)', '(ser)', '(estar)', '(ter)', '(vir)', '(pôr)'],
 },
 indSecondIrregImp: {
+  mode: 'indicative',
   pronoun: 'secondPerson',
   pronounNumberMin: 3,
   pronounNumberMax: 5,
@@ -394,6 +432,7 @@ indSecondIrregImp: {
   infinitive: ['(ir)', '(ser)', '(estar)', '(ter)', '(vir)', '(pôr)'],
 },
 indThirdIrregImp: {
+  mode: 'indicative',
   pronoun: 'thirdPerson',
   pronounNumberMin: 1,
   pronounNumberMax: pronounList.length-1,
@@ -403,6 +442,7 @@ indThirdIrregImp: {
   infinitive: ['(ir)', '(ser)', '(estar)', '(ter)', '(vir)', '(pôr)'],
 },
 indFirstRegImp: {
+  mode: 'indicative',
   pronoun: 'firstPerson',
   pronounNumberMin: 0,
   pronounNumberMax: 0,
@@ -412,6 +452,7 @@ indFirstRegImp: {
   infinitive: ['(discutir)', '(dividir)', '(comer)', '(matar)', '(iludir)', '(falar)', '(amar)', '(beber)', '(cantar)', '(comprar)', '(estudar)', '(vender)', '(viver)', '(achar)', '(acabar)', '(andar)', '(chamar)', '(encontrar)', '(morar)', '(morrer)', '(pensar)', '(olhar)', '(tomar)', '(voltar)', '(deixar)', '(levar)', '(dever)', '(existir)', '(receber)', '(trabalhar)', '(decidir)', '(fechar)', '(mandar)', '(perceber)', '(gostar)', '(usar)', '(esperar)', '(correr)', '(mostrar)', '(escrever)', '(abrir)', '(precisar)', '(fugir)', '(subir)', '(dormir)', '(medir)', '(ouvir)', '(pedir)', '(perder)', '(seguir)', '(servir)', '(sentir)', '(valer)', '(dar)', '(dizer)', '(trazer)', '(poder)', '(ler)', '(ver)'],
 },
 indVoceRegImp: {
+  mode: 'indicative',
   pronoun: 'vocePerson',
   pronounNumberMin: 3,
   pronounNumberMax: 1,
@@ -421,6 +462,7 @@ indVoceRegImp: {
   infinitive: [],
 },
 indSecondRegImp: {
+  mode: 'indicative',
   pronoun: 'secondPerson',
   pronounNumberMin: 3,
   pronounNumberMax: 5,
@@ -430,6 +472,7 @@ indSecondRegImp: {
   infinitive: [],
 },
 indThirdRegImp: {
+  mode: 'indicative',
   pronoun: 'thirdPerson',
   pronounNumberMin: 1,
   pronounNumberMax: pronounList.length,
@@ -439,6 +482,7 @@ indThirdRegImp: {
   infinitive: [],
 },
 indFirstBothImp: {
+  mode: 'indicative',
   pronoun: 'firstPerson',
   pronounNumberMin: 0,
   pronounNumberMax: 0,
@@ -448,6 +492,7 @@ indFirstBothImp: {
   infinitive: [],
 },
 indVoceBothImp: {
+  mode: 'indicative',
   pronoun: 'vocePerson',
   pronounNumberMin: 3,
   pronounNumberMax: 1,
@@ -457,6 +502,7 @@ indVoceBothImp: {
   infinitive: [],
 },
 indSecondBothImp: {
+  mode: 'indicative',
   pronoun: 'secondPerson',
   pronounNumberMin: 3,
   pronounNumberMax: 5,
@@ -466,6 +512,7 @@ indSecondBothImp: {
   infinitive: [],
 },
 indThirdBothImp: {
+  mode: 'indicative',
   pronoun: 'thirdPerson',
   pronounNumberMin: 1,
   pronounNumberMax: pronounList.length-1,
@@ -475,6 +522,7 @@ indThirdBothImp: {
   infinitive: [],
 },
 indFirstIrregPerf: {
+  mode: 'indicative',
   pronoun: 'firstPerson',
   pronounNumberMin: 0,
   pronounNumberMax: 0,
@@ -484,6 +532,7 @@ indFirstIrregPerf: {
   infinitive: ['(ir)', '(ser)', '(estar)', '(dar)', '(dizer)', '(fazer)', '(trazer)', '(poder)', '(ter)', '(vir)', '(pôr)', '(ler)', '(ver)', '(cair)', '(sair)', '(crer)', '(caber)', '(querer)', '(saber)', '(requerer)', '(haver)'],
 },
 indVoceIrregPerf: {
+  mode: 'indicative',
   pronoun: 'vocePerson',
   pronounNumberMin: 3,
   pronounNumberMax: 1,
@@ -493,6 +542,7 @@ indVoceIrregPerf: {
   infinitive: [],
 },
 indSecondIrregPerf: {
+  mode: 'indicative',
   pronoun: 'vocePerson',
   pronounNumberMin: 3,
   pronounNumberMax: 5,
@@ -502,15 +552,17 @@ indSecondIrregPerf: {
   infinitive: [],
 },
 indThirdIrregPerf: {
+  mode: 'indicative',
   pronoun: 'thirdPerson',
   pronounNumberMin: 1,
   pronounNumberMax: pronounList.length-1,
   tense: 'perfect',
   regularity: 'irregular',
-  conjugated: ['fomos', 'fomos', 'estivemos', 'demos', 'dissemos', 'fizemos', 'trouxemos', 'pudemos', 'tivemos', 'viemos', 'puseramos', 'lemos', 'vimos', 'caímos', 'saímos', 'cremos', 'coubemos', 'quisemos', 'soubemos', 'valemos', 'requisemos', 'houvemos'],
+  conjugated: ['fomos', 'fomos', 'estivemos', 'demos', 'dissemos', 'fizemos', 'trouxemos', 'pudemos', 'tivemos', 'viemos', 'puseramos', 'lemos', 'vimos', 'caímos', 'saímos', 'cremos', 'coubemos', 'quisemos', 'soubemos', 'requisemos', 'houvemos'],
   infinitive: [],
 },
 indFirstRegPerf: {
+  mode: 'indicative',
   pronoun: 'firstPerson',
   pronounNumberMin: 0,
   pronounNumberMax: 0,
@@ -520,6 +572,7 @@ indFirstRegPerf: {
   infinitive: ['(discutir)', '(dividir)', '(comer)', '(matar)', '(iludir)', '(falar)', '(amar)', '(beber)', '(cantar)', '(comprar)', '(estudar)', '(vender)', '(viver)', '(achar)', '(acabar)', '(andar)', '(chamar)', '(encontrar)', '(morar)', '(morrer)', '(pensar)', '(olhar)', '(tomar)', '(voltar)', '(deixar)', '(levar)', '(dever)', '(existir)', '(receber)', '(trabalhar)', '(decidir)', '(fechar)', '(mandar)', '(perceber)', '(gostar)', '(usar)', '(esperar)', '(correr)', '(mostrar)', '(escrever)', '(abrir)', '(precisar)', '(fugir)', '(subir)', '(dormir)', '(medir)', '(ouvir)', '(pedir)', '(perder)', '(seguir)', '(servir)', '(sentir)', '(valer)'],
 },
 indVoceRegPerf: {
+  mode: 'indicative',
   pronoun: 'vocePerson',
   pronounNumberMin: 3,
   pronounNumberMax: 1,
@@ -529,6 +582,7 @@ indVoceRegPerf: {
   infinitive: [],
 },
 indSecondRegPerf: {
+  mode: 'indicative',
   pronoun: 'secondPerson',
   pronounNumberMin: 3,
   pronounNumberMax: 5,
@@ -538,6 +592,7 @@ indSecondRegPerf: {
   infinitive: [],
 },
 indThirdRegPerf: {
+  mode: 'indicative',
   pronoun: 'thirdPerson',
   pronounNumberMin: 1,
   pronounNumberMax: pronounList.length-1,
@@ -547,6 +602,7 @@ indThirdRegPerf: {
   infinitive: [],
 },
 indFirstBothPerf: {
+  mode: 'indicative',
   pronoun: 'firstPerson',
   pronounNumberMin: 0,
   pronounNumberMax: 0,
@@ -556,6 +612,7 @@ indFirstBothPerf: {
   infinitive: [],
 },
 indVoceBothPerf: {
+  mode: 'indicative',
   pronoun: 'vocePerson',
   pronounNumberMin: 3,
   pronounNumberMax: 1,
@@ -565,6 +622,7 @@ indVoceBothPerf: {
   infinitive: [],
 },
 indSecondBothPerf: {
+  mode: 'indicative',
   pronoun: 'secondPerson',
   pronounNumberMin: 3,
   pronounNumberMax: 5,
@@ -574,6 +632,7 @@ indSecondBothPerf: {
   infinitive: [],
 },
 indThirdBothPerf: {
+  mode: 'indicative',
   pronoun: 'thirdPerson',
   pronounNumberMin: 1,
   pronounNumberMax: pronounList.length-1,
@@ -583,6 +642,7 @@ indThirdBothPerf: {
   infinitive: [],
 },
 indFirstIrregPres: {
+  mode: 'indicative',
   pronoun: 'firstPerson',
   pronounNumberMin: 0,
   pronounNumberMax: 0,
@@ -592,6 +652,7 @@ indFirstIrregPres: {
   infinitive: ['(ir)', '(ser)', '(estar)', '(dar)', '(dizer)', '(fazer)', '(trazer)', '(poder)', '(ter)', '(vir)', '(pôr)', '(ler)', '(ver)', '(cair)', '(sair)', '(crer)', '(fugir)', '(rir)', '(subir)', '(caber)', '(querer)', '(saber)', '(dormir)', '(medir)', '(ouvir)', '(pedir)', '(perder)', '(seguir)', '(servir)', '(sentir)', '(valer)', '(requerer)', '(haver)'], 
 },
 indVoceIrregPres: {
+  mode: 'indicative',
   pronoun: 'vocePerson',
   pronounNumberMin: 3,
   pronounNumberMax: 1,
@@ -601,15 +662,17 @@ indVoceIrregPres: {
   infinitive: [],
 },
 indSecondIrregPres: {
+  mode: 'indicative',
   pronoun: 'secondPerson',
   pronounNumberMin: 3,
   pronounNumberMax: 5,
   tense: 'present',
   regularity: 'irregular',
-  conjugated: ['vão','são', 'dão', 'dizem', 'fazem', 'trazem', 'podem', 'têm', 'vêm', 'põem', 'leem', 'vêem', 'caem', 'fogem', 'riem', 'sobem', 'cabem', 'querem', 'sabem', 'dormem', 'medem', 'ouvem', 'pedem', 'seguem', 'servem', 'sentem', 'valem', 'requerem', 'hão'],
+  conjugated: ['vão','são', 'estão', 'dão', 'dizem', 'fazem', 'trazem', 'podem', 'têm', 'vêm', 'põem', 'leem', 'vêem', 'caem', 'saem', 'crêem', 'fogem', 'riem', 'sobem', 'cabem', 'querem', 'sabem', 'dormem', 'medem', 'ouvem', 'pedem', 'perdem', 'seguem', 'servem', 'sentem', 'valem', 'requerem', 'hão'],
   infinitive: [],
 },
 indThirdIrregPres: {
+  mode: 'indicative',
   pronoun: 'thirdPerson',
   pronounNumberMin: 1,
   pronounNumberMax: pronounList.length-1,
@@ -619,6 +682,7 @@ indThirdIrregPres: {
   infinitive: [],
 },
 indFirstRegPres: {
+  mode: 'indicative',
   pronoun: 'firstPerson',
   pronounNumberMin: 0,
   pronounNumberMax: 0,
@@ -628,6 +692,7 @@ indFirstRegPres: {
   infinitive: ['(discutir)', '(dividir)', '(comer)', '(matar)', '(iludir)', '(falar)', '(amar)', '(beber)', '(cantar)', '(comprar)', '(estudar)', '(vender)', '(viver)', '(achar)', '(acabar)', '(andar)', '(chamar)', '(encontrar)', '(morar)', '(morrer)', '(pensar)', '(olhar)', '(tomar)', '(voltar)', '(deixar)', '(levar)', '(dever)', '(existir)', '(receber)', '(trabalhar)', '(decidir)', '(fechar)', '(mandar)', '(perceber)', '(gostar)', '(usar)', '(esperar)', '(correr)', '(mostrar)', '(escrever)', '(abrir)', '(precisar)'],
 },
 indVoceRegPres: {
+  mode: 'indicative',
   pronoun: 'vocePerson',
   pronounNumberMin: 3,
   pronounNumberMax: 1,
@@ -637,6 +702,7 @@ indVoceRegPres: {
   infinitive: [],
 },
 indSecondRegPres: {
+  mode: 'indicative',
   pronoun: 'secondPerson',
   pronounNumberMin: 3,
   pronounNumberMax: 5,
@@ -646,6 +712,7 @@ indSecondRegPres: {
   infinitive: [],
 },
 indThirdRegPres: {
+  mode: 'indicative',
   pronoun: 'thirdPerson',
   pronounNumberMin: 1,
   pronounNumberMax: pronounList.length-1,
@@ -655,6 +722,7 @@ indThirdRegPres: {
   infinitive: [],
 },
 indFirstBothPres: {
+  mode: 'indicative',
   pronoun: 'firstPerson',
   pronounNumberMin: 0,
   pronounNumberMax: 0,
@@ -664,6 +732,7 @@ indFirstBothPres: {
   infinitive: [],
 },
 indVoceBothPres: {
+  mode: 'indicative',
   pronoun: 'vocePerson',
   pronounNumberMin: 3,
   pronounNumberMax: 1,
@@ -673,6 +742,7 @@ indVoceBothPres: {
   infinitive: [],
 },
 indSecondBothPres: {
+  mode: 'indicative',
   pronoun: 'secondPerson',
   pronounNumberMin: 3,
   pronounNumberMax: 5,
@@ -682,6 +752,7 @@ indSecondBothPres: {
   infinitive: [],
 },
 indThirdBothPres: {
+  mode: 'indicative',
   pronoun: 'firstPerson',
   pronounNumberMin: 1,
   pronounNumberMax: pronounList.length-1,
@@ -691,6 +762,7 @@ indThirdBothPres: {
   infinitive: [],
 },
 indFirstIrregCond: {
+  mode: 'indicative',
   pronoun: 'firstPerson',
   pronounNumberMin: 0,
   pronounNumberMax: 0,
@@ -700,6 +772,7 @@ indFirstIrregCond: {
   infinitive: ['(dizer)', '(fazer)', '(trazer)', '(pôr)'],
 },
 indVoceIrregCond: {
+  mode: 'indicative',
   pronoun: 'vocePerson',
   pronounNumberMin: 3,
   pronounNumberMax: 1,
@@ -709,6 +782,7 @@ indVoceIrregCond: {
   infinitive: ['(dizer)', '(fazer)', '(trazer)', '(pôr)'],
 },
 indSecondIrregCond: {
+  mode: 'indicative',
   pronoun: 'secondPerson',
   pronounNumberMin: 3,
   pronounNumberMax: 5,
@@ -718,6 +792,7 @@ indSecondIrregCond: {
   infinitive: ['(dizer)', '(fazer)', '(trazer)', '(pôr)'],
 },
 indThirdIrregCond: {
+  mode: 'indicative',
   pronoun: 'thirdPerson',
   pronounNumberMin: 1,
   pronounNumberMax: pronounList.length,
@@ -727,6 +802,7 @@ indThirdIrregCond: {
   infinitive: ['(dizer)', '(fazer)', '(trazer)', '(pôr)'],
 },
 indFirstRegCond: {
+  mode: 'indicative',
   pronoun: 'firstPerson',
   pronounNumberMin: 0,
   pronounNumberMax: 0,
@@ -736,6 +812,7 @@ indFirstRegCond: {
   infinitive: ['(comer)', '(matar)', '(iludir)', '(falar)', '(amar)', '(beber)', '(cantar)', '(comprar)', '(estudar)', '(vender)', '(viver)', '(achar)', '(acabar)', '(andar)', '(chamar)', '(encontrar)', '(morar)', '(morrer)', '(pensar)', '(olhar)', '(tomar)', '(voltar)', '(deixar)', '(levar)', '(dever)', '(existir)', '(receber)', '(trabalhar)', '(decidir)', '(fechar)', '(mandar)', '(perceber)', '(gostar)', '(usar)', '(esperar)', '(correr)', '(mostrar)', '(escrever)', '(abrir)', '(precisar)', '(ir)', '(ser)', '(estar)', '(dar)', '(poder)', '(ter)', '(vir)', '(pôr)', '(ler)', '(ver)', '(cair)', '(sair)', '(crer)', '(fugir)', '(rir)', '(subir)', '(caber)', '(querer)', '(saber)', '(dormir)', '(medir)', '(ouvir)', '(pedir)', '(perder)', '(seguir)', '(servir)', '(sentir)', '(valer)', '(requerer)', '(haver)'], 
 },
 indVoceRegCond: {
+  mode: 'indicative',
   pronoun: 'vocePerson',
   pronounNumberMin: 3,
   pronounNumberMax: 1,
@@ -745,6 +822,7 @@ indVoceRegCond: {
   infinitive: [],
 },
 indSecondRegCond: {
+  mode: 'indicative',
   pronoun: 'secondPerson',
   pronounNumberMin: 3,
   pronounNumberMax: 5,
@@ -754,6 +832,7 @@ indSecondRegCond: {
   infinitive: [],
 },
 indThirdRegCond: {
+  mode: 'indicative',
   pronoun: 'thirdPerson',
   pronounNumberMin: 1,
   pronounNumberMax: pronounList.length,
@@ -763,6 +842,7 @@ indThirdRegCond: {
   infinitive: [],
 },
 indFirstBothCond: {
+  mode: 'indicative',
   pronoun: 'firstPerson',
   pronounNumberMin: 0,
   pronounNumberMax: 0,
@@ -772,7 +852,8 @@ indFirstBothCond: {
   infinitive: [],
 },
 indVoceBothCond: {
-  pronoun: 'firstPerson',
+  mode: 'indicative',
+  pronoun: 'vocePerson',
   pronounNumberMin: 3,
   pronounNumberMax: 1,
   tense: 'conditional',
@@ -781,7 +862,8 @@ indVoceBothCond: {
   infinitive: [],
 },
 indSecondBothCond: {
-  pronoun: 'firstPerson',
+  mode: 'indicative',
+  pronoun: 'secondPerson',
   pronounNumberMin: 3,
   pronounNumberMax: 5,
   tense: 'conditional',
@@ -790,7 +872,8 @@ indSecondBothCond: {
   infinitive: [],
 },
 indThirdBothCond: {
-  pronoun: 'firstPerson',
+  mode: 'indicative',
+  pronoun: 'thirdPerson',
   pronounNumberMin: 1,
   pronounNumberMax: pronounList.length-1,
   tense: 'conditional',
@@ -798,10 +881,163 @@ indThirdBothCond: {
   conjugated: [],
   infinitive: [],
 },
+indAllRegImp: {
+  mode: 'indicative',
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'imperfect',
+  regularity: 'regular',
+  first: [],
+  voce: [],
+  second: [],
+  third: [],
+  infinitive: [],
+},
+indAllIrregImp: {
+  mode: 'indicative',
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'imperfect',
+  regularity: 'irregular',
+  first: [],
+  voce: [],
+  second: [],
+  third: [],
+  infinitive: [],
+},
+indAllBothImp: {
+  mode: 'indicative',
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'imperfect',
+  regularity: 'both',
+  first: [],
+  voce: [],
+  second: [],
+  third: [],
+  infinitive: [],
+},
+indAllIrregPerf: {
+  mode: 'indicative',
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'perfect',
+  regularity: 'irregular',
+  first: [],
+  voce: [],
+  second: [],
+  third: [],
+  infinitive: [],
+},
+indAllRegPerf: {
+  mode: 'indicative',
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'perfect',
+  regularity: 'regular',
+  first: [],
+  voce: [],
+  second: [],
+  third: [],
+  infinitive: [],
+},
+indAllBothPerf: {
+  mode: 'indicative',
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'perfect',
+  regularity: 'both',
+  first: [],
+  voce: [],
+  second: [],
+  third: [],
+  infinitive: [],
+},
+indAllIrregPres: {
+  mode: 'indicative',
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'present',
+  regularity: 'irregular',
+  first: [],
+  voce: [],
+  second: [],
+  third: [],
+  infinitive: [],
+},
+indAllRegPres: {
+  mode: 'indicative',
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'present',
+  regularity: 'regular',
+  first: [],
+  voce: [],
+  second: [],
+  third: [],
+  infinitive: [],
+},
+indAllBothPres: {
+  mode: 'indicative',
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'present',
+  regularity: 'both',
+  first: [],
+  voce: [],
+  second: [],
+  third: [],
+  infinitive: [],
+},
+indAllIrregCond: {
+  mode: 'indicative',
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'conditional',
+  regularity: 'irregular',
+  first: [],
+  voce: [],
+  second: [],
+  third: [],
+  infinitive: [],
+},
+indAllRegCond: {
+  mode: 'indicative',
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'conditional',
+  regularity: 'regular',
+  first: [],
+  voce: [],
+  second: [],
+  third: [],
+  infinitive: [],
+},
+indAllBothCond: {
+  mode: 'indicative',
+  pronoun: 'allPersons',
+  pronounNumberMin: pronounList.length-1,
+  pronounNumberMax: 1,
+  tense: 'conditional',
+  regularity: 'both',
+  first: [],
+  voce: [],
+  second: [],
+  third: [],
+  infinitive: [],
+},
 };
-
-verbs.indFirstBothImp.infinitive=verbs.indFirstIrregImp.infinitive.concat(verbs.indFirstRegImp.infinitive)
-
 //populate empty keys
 verbs.secondIrregImp.infinitive = verbs.firstIrregImp.infinitive
 verbs.thirdIrregImp.infinitive = verbs.firstIrregImp.infinitive
@@ -870,9 +1106,12 @@ verbs.firstRegPres.conjugated = verbs.firstRegPres.infinitive.map((word) =>{
 verbs.secondRegPres.conjugated = verbs.firstRegPres.conjugated.map((word) => 
   word += 'm'
 );
-verbs.thirdRegPres.conjugated = verbs.secondRegPres.conjugated.map((word) => 
-  word += 'os'
-);
+verbs.thirdRegPres.conjugated = verbs.firstRegPres.infinitive.map((word) => {
+  word = word.slice(1,word.length-2)
+  word += 'mos'
+  return word
+});
+
 
 verbs.firstBothPres.infinitive = verbs.firstRegImp.infinitive.concat(verbs.firstIrregPres.infinitive);
 verbs.secondBothPres.infinitive = verbs.firstBothPres.infinitive
@@ -904,14 +1143,12 @@ word+='em'
 verbs.thirdRegFut.conjugated = verbs.firstRegFut.conjugated.map((word) => 
 word+='mos'
 );
-
 verbs.firstBothFut.infinitive = verbs.firstRegImp.infinitive.concat(verbs.firstIrregPres.infinitive);
 verbs.secondBothFut.infinitive = verbs.firstBothFut.infinitive
 verbs.thirdBothFut.infinitive = verbs.firstBothFut.infinitive
 verbs.firstBothFut.conjugated = verbs.firstRegFut.conjugated.concat(verbs.firstIrregFut.conjugated);
 verbs.secondBothFut.conjugated = verbs.secondRegFut.conjugated.concat(verbs.secondIrregFut.conjugated);
 verbs.thirdBothFut.conjugated = verbs.thirdRegFut.conjugated.concat(verbs.thirdIrregFut.conjugated);
-
 verbs.allIrregImp.infinitive = verbs.firstIrregImp.infinitive
 verbs.allRegImp.infinitive = verbs.firstRegImp.infinitive
 verbs.allBothImp.infinitive = verbs.firstRegImp.infinitive.concat(verbs.firstIrregImp.infinitive)
@@ -924,7 +1161,6 @@ verbs.allRegImp.third = verbs.thirdRegImp.conjugated
 verbs.allBothImp.first = verbs.firstBothImp.conjugated
 verbs.allBothImp.second = verbs.secondBothImp.conjugated
 verbs.allBothImp.third = verbs.thirdBothImp.conjugated
-
 verbs.allIrregPres.infinitive = verbs.firstIrregPres.infinitive
 verbs.allRegPres.infinitive = verbs.firstRegPres.infinitive
 verbs.allBothPres.infinitive = verbs.firstRegPres.infinitive.concat(verbs.firstIrregPres.infinitive)
@@ -937,7 +1173,6 @@ verbs.allRegPres.third = verbs.thirdRegPres.conjugated
 verbs.allBothPres.first = verbs.firstBothPres.conjugated
 verbs.allBothPres.second = verbs.secondBothPres.conjugated
 verbs.allBothPres.third = verbs.thirdBothPres.conjugated
-
 verbs.allIrregFut.infinitive = verbs.firstIrregFut.infinitive
 verbs.allRegFut.infinitive = verbs.firstRegFut.infinitive
 verbs.allBothFut.infinitive = verbs.firstRegFut.infinitive.concat(verbs.firstIrregFut.infinitive)
@@ -981,6 +1216,14 @@ else if(word[word.length-2]==='v'){
 }
 return word
 });
+verbs.indFirstBothImp.infinitive=verbs.indFirstIrregImp.infinitive.concat(verbs.indFirstRegImp.infinitive)
+verbs.indVoceBothImp.infinitive=verbs.indVoceIrregImp.infinitive.concat(verbs.indVoceRegImp.infinitive)
+verbs.indSecondBothImp.infinitive=verbs.indSecondIrregImp.infinitive.concat(verbs.indSecondRegImp.infinitive)
+verbs.indThirdBothImp.infinitive=verbs.indThirdIrregImp.infinitive.concat(verbs.indThirdRegImp.infinitive)
+verbs.indFirstBothImp.conjugated=verbs.indFirstIrregImp.conjugated.concat(verbs.indFirstRegImp.conjugated)
+verbs.indVoceBothImp.conjugated=verbs.indVoceIrregImp.conjugated.concat(verbs.indVoceRegImp.conjugated)
+verbs.indSecondBothImp.conjugated=verbs.indSecondIrregImp.conjugated.concat(verbs.indSecondRegImp.conjugated)
+verbs.indThirdBothImp.conjugated=verbs.indThirdIrregImp.conjugated.concat(verbs.indThirdRegImp.conjugated)
 //present
 verbs.indVoceRegPres.infinitive = verbs.indFirstRegPres.infinitive
 verbs.indSecondRegPres.infinitive = verbs.indFirstRegPres.infinitive
@@ -1019,9 +1262,9 @@ verbs.indVoceIrregPerf.infinitive = verbs.indFirstIrregPerf.infinitive
 verbs.indSecondIrregPerf.infinitive = verbs.indFirstIrregPerf.infinitive
 verbs.indThirdIrregPerf.infinitive = verbs.indFirstIrregPerf.infinitive
 //reg perfect
-verbs.indVoceRegPerf.infintive = verbs.indFirstRegPerf.infinitive
-verbs.indSecondRegPerf.infintive = verbs.indFirstRegPerf.infinitive
-verbs.indThirdRegPerf.infintive = verbs.indFirstRegPerf.infinitive
+verbs.indVoceRegPerf.infinitive = verbs.indFirstRegPerf.infinitive
+verbs.indSecondRegPerf.infinitive = verbs.indFirstRegPerf.infinitive
+verbs.indThirdRegPerf.infinitive = verbs.indFirstRegPerf.infinitive
 verbs.indFirstRegPerf.conjugated = verbs.indFirstRegPerf.infinitive.map((word) =>{
   if (word[word.length-3]==='i'||word[word.length-3]==='e'){
   word = word.slice(1,word.length-3)
@@ -1054,11 +1297,18 @@ verbs.indThirdRegPerf.conjugated = verbs.indFirstRegPerf.infinitive.map((word) =
   word += 'mos'
   return word
 });
+verbs.indFirstBothPerf.infinitive=verbs.indFirstIrregPerf.infinitive.concat(verbs.indFirstRegPerf.infinitive)
+verbs.indVoceBothPerf.infinitive=verbs.indVoceIrregPerf.infinitive.concat(verbs.indVoceRegPerf.infinitive)
+verbs.indSecondBothPerf.infinitive=verbs.indSecondIrregPerf.infinitive.concat(verbs.indSecondRegPerf.infinitive)
+verbs.indThirdBothPerf.infinitive=verbs.indThirdIrregPerf.infinitive.concat(verbs.indThirdRegPerf.infinitive)
+verbs.indFirstBothPerf.conjugated=verbs.indFirstIrregPerf.conjugated.concat(verbs.indFirstRegPerf.conjugated)
+verbs.indVoceBothPerf.conjugated=verbs.indVoceIrregPerf.conjugated.concat(verbs.indVoceRegPerf.conjugated)
+verbs.indSecondBothPerf.conjugated=verbs.indSecondIrregPerf.conjugated.concat(verbs.indSecondRegPerf.conjugated)
+verbs.indThirdBothPerf.conjugated=verbs.indThirdIrregPerf.conjugated.concat(verbs.indThirdRegPerf.conjugated)
 //conditional
 verbs.indVoceRegCond.infinitive = verbs.indFirstRegCond.infinitive
 verbs.indSecondRegCond.infinitive = verbs.indFirstRegCond.infinitive
 verbs.indThirdRegCond.infinitive = verbs.indFirstRegCond.infinitive
-
 verbs.indFirstRegCond.conjugated = verbs.indFirstRegCond.infinitive.map((word) => {
   word=word.slice(1,word.length-1)
   word+='ia'
@@ -1081,6 +1331,71 @@ verbs.indFirstBothCond.conjugated=verbs.indFirstIrregCond.conjugated.concat(verb
 verbs.indVoceBothCond.conjugated=verbs.indVoceIrregCond.conjugated.concat(verbs.indVoceRegCond.conjugated)
 verbs.indSecondBothCond.conjugated=verbs.indSecondIrregCond.conjugated.concat(verbs.indSecondRegCond.conjugated)
 verbs.indThirdBothCond.conjugated=verbs.indThirdIrregCond.conjugated.concat(verbs.indThirdRegCond.conjugated)
+//ind cond all 
+verbs.indAllIrregCond.first=verbs.indFirstIrregCond.conjugated
+verbs.indAllIrregCond.voce=verbs.indVoceIrregCond.conjugated
+verbs.indAllIrregCond.second=verbs.indSecondIrregCond.conjugated
+verbs.indAllIrregCond.third=verbs.indThirdIrregCond.conjugated
+verbs.indAllRegCond.first=verbs.indFirstRegCond.conjugated
+verbs.indAllRegCond.voce=verbs.indVoceRegCond.conjugated
+verbs.indAllRegCond.second=verbs.indSecondRegCond.conjugated
+verbs.indAllRegCond.third=verbs.indThirdRegCond.conjugated
+verbs.indAllBothCond.first=verbs.indFirstBothCond.conjugated
+verbs.indAllBothCond.voce=verbs.indVoceBothCond.conjugated
+verbs.indAllBothCond.second=verbs.indSecondBothCond.conjugated
+verbs.indAllBothCond.third=verbs.indThirdBothCond.conjugated
+//ind pres all 
+verbs.indAllIrregPres.first=verbs.indFirstIrregPres.conjugated
+verbs.indAllIrregPres.voce=verbs.indVoceIrregPres.conjugated
+verbs.indAllIrregPres.second=verbs.indSecondIrregPres.conjugated
+verbs.indAllIrregPres.third=verbs.indThirdIrregPres.conjugated
+verbs.indAllRegPres.first=verbs.indFirstRegPres.conjugated
+verbs.indAllRegPres.voce=verbs.indVoceRegPres.conjugated
+verbs.indAllRegPres.second=verbs.indSecondRegPres.conjugated
+verbs.indAllRegPres.third=verbs.indThirdRegPres.conjugated
+verbs.indAllBothPres.first=verbs.indFirstBothPres.conjugated
+verbs.indAllBothPres.voce=verbs.indVoceBothPres.conjugated
+verbs.indAllBothPres.second=verbs.indSecondBothPres.conjugated
+verbs.indAllBothPres.third=verbs.indThirdBothPres.conjugated
+//ind perf all
+verbs.indAllIrregPerf.first=verbs.indFirstIrregPerf.conjugated
+verbs.indAllIrregPerf.voce=verbs.indVoceIrregPerf.conjugated
+verbs.indAllIrregPerf.second=verbs.indSecondIrregPerf.conjugated
+verbs.indAllIrregPerf.third=verbs.indThirdIrregPerf.conjugated
+verbs.indAllRegPerf.first=verbs.indFirstRegPerf.conjugated
+verbs.indAllRegPerf.voce=verbs.indVoceRegPerf.conjugated
+verbs.indAllRegPerf.second=verbs.indSecondRegPerf.conjugated
+verbs.indAllRegPerf.third=verbs.indThirdRegPerf.conjugated
+verbs.indAllBothPerf.first=verbs.indFirstBothPerf.conjugated
+verbs.indAllBothPerf.voce=verbs.indVoceBothPerf.conjugated
+verbs.indAllBothPerf.second=verbs.indSecondBothPerf.conjugated
+verbs.indAllBothPerf.third=verbs.indThirdBothPerf.conjugated
+//ind imp all 
+verbs.indAllIrregImp.first=verbs.indFirstIrregImp.conjugated
+verbs.indAllIrregImp.voce=verbs.indVoceIrregImp.conjugated
+verbs.indAllIrregImp.second=verbs.indSecondIrregImp.conjugated
+verbs.indAllIrregImp.third=verbs.indThirdIrregImp.conjugated
+verbs.indAllRegImp.first=verbs.indFirstRegImp.conjugated
+verbs.indAllRegImp.voce=verbs.indVoceRegImp.conjugated
+verbs.indAllRegImp.second=verbs.indSecondRegImp.conjugated
+verbs.indAllRegImp.third=verbs.indThirdRegImp.conjugated
+verbs.indAllBothImp.first=verbs.indFirstBothImp.conjugated
+verbs.indAllBothImp.voce=verbs.indVoceBothImp.conjugated
+verbs.indAllBothImp.second=verbs.indSecondBothImp.conjugated
+verbs.indAllBothImp.third=verbs.indThirdBothImp.conjugated
+//all ind infinitives
+verbs.indAllIrregImp.infinitive=verbs.indFirstIrregImp.infinitive
+verbs.indAllRegImp.infinitive=verbs.indFirstRegImp.infinitive
+verbs.indAllBothImp.infinitive=verbs.indFirstBothImp.infinitive
+verbs.indAllIrregPerf.infinitive=verbs.indFirstIrregPerf.infinitive
+verbs.indAllRegPerf.infinitive=verbs.indFirstRegPerf.infinitive
+verbs.indAllBothPerf.infinitive=verbs.indFirstBothPerf.infinitive
+verbs.indAllIrregPres.infinitive=verbs.indFirstIrregPres.infinitive
+verbs.indAllRegPres.infinitive=verbs.indFirstRegPres.infinitive
+verbs.indAllBothPres.infinitive=verbs.indFirstBothPres.infinitive
+verbs.indAllIrregCond.infinitive=verbs.indFirstIrregCond.infinitive
+verbs.indAllRegCond.infinitive=verbs.indFirstRegCond.infinitive
+verbs.indAllBothCond.infinitive=verbs.indFirstBothCond.infinitive
 
 
 
@@ -1130,7 +1445,10 @@ document.addEventListener('keypress', function (e) {
     check();
   }
 });
-
+//capitalize first letter function
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 
 //Reset game
@@ -1139,45 +1457,73 @@ function reset(){
     return;
 }
 if(preferencesResults.length===0){
-  preferencesResults.push('allPersons','both','present')
+  preferencesResults.push('allPersons','both','present','subjunctive')
 }
 for (var key in verbs){
-  if(containsAll(preferencesResults, [verbs[key].pronoun, verbs[key].regularity, verbs[key].tense])){
+  if(containsAll(preferencesResults, [verbs[key].pronoun, verbs[key].regularity, verbs[key].tense, verbs[key].mode])){
     randomPronoun=Math.floor(Math.random()*(verbs[key].pronounNumberMin))+verbs[key].pronounNumberMax
     var randomSpecializedNumber=Math.floor(Math.random()*verbs[key].infinitive.length)
     infinitiveText.textContent=verbs[key].infinitive[randomSpecializedNumber]
+    console.log(randomPronoun)
     if (preferencesResults[0] !== 'allPersons'){
     correctAnswer = verbs[key].conjugated[randomSpecializedNumber]
     }
     if(preferencesResults[0]==='thirdPerson'){
       randomPronoun=8;
     }
-    if(preferencesResults[2]==='imperfect'){
+    if(preferencesResults[2]==='imperfect' && preferencesResults[3]==='subjunctive'){
       sentOne.textContent='Se ' + pronounList[randomPronoun];
       verbSelected.style.display = 'block';
       verbSelected.innerHTML = 'Verb tense: Subjunctive Imperfect'; 
     }
-    else if(preferencesResults[2]==='present'){
+    else if(preferencesResults[2]==='present' && preferencesResults[3]==='subjunctive'){
       randomDesire=Math.floor(Math.random()*desireVerb.length);
       sentOne.textContent=`${desireVerb[randomDesire]} que ${pronounList[randomPronoun]}`;
       verbSelected.style.display = 'block';
       verbSelected.innerHTML = 'Verb tense: Subjunctive Present'; 
     }
-    else if(preferencesResults[2]==='future'){
+    else if(preferencesResults[2]==='future' && preferencesResults[3]==='subjunctive'){
       sentOne.textContent=futSentStarts[Math.floor(Math.random()*2)] + pronounList[randomPronoun];
       verbSelected.style.display = 'block';
       verbSelected.innerHTML = 'Verb tense: Subjunctive Future'; 
+    }
+    if(preferencesResults[2]==='imperfect' && preferencesResults[3]==='indicative'){
+      sentOne.textContent=capitalizeFirstLetter(pronounList[randomPronoun]);
+      verbSelected.style.display = 'block';
+      verbSelected.innerHTML = 'Verb tense: Indicative Imperfect'; 
+    }
+    else if(preferencesResults[2]==='perfect' && preferencesResults[3]==='indicative'){
+      sentOne.textContent=capitalizeFirstLetter(pronounList[randomPronoun]);
+      verbSelected.style.display = 'block';
+      verbSelected.innerHTML = 'Verb tense: Indicative Perfect'; 
+    }
+    else if(preferencesResults[2]==='present' && preferencesResults[3]==='indicative'){
+      sentOne.textContent=capitalizeFirstLetter(pronounList[randomPronoun]);
+      verbSelected.style.display = 'block';
+      verbSelected.innerHTML = 'Verb tense: Indicative Present'; 
+    }
+    else if(preferencesResults[2]==='conditional' && preferencesResults[3]==='indicative'){
+      sentOne.textContent=capitalizeFirstLetter(pronounList[randomPronoun]);
+      verbSelected.style.display = 'block';
+      verbSelected.innerHTML = 'Verb tense: Future of the Past (conditional)'; 
     }
   if(preferencesResults[0] === 'allPersons'){
     infinitiveText.textContent=verbs[key].infinitive[randomSpecializedNumber]
   if (randomPronoun>4 && randomPronoun<8){
     correctAnswer=verbs[key].second[randomSpecializedNumber]
+    console.log(verbs[key].second)
     }
     else if(randomPronoun>7){
       correctAnswer=verbs[key].third[randomSpecializedNumber]
+      console.log(verbs[key].third)
+    }
+    else if(randomPronoun>0 && randomPronoun<5){
+      correctAnswer=verbs[key].voce[randomSpecializedNumber]
+      console.log(verbs[key].voce)
     }
     else{
      correctAnswer=verbs[key].first[randomSpecializedNumber]
+     console.log(verbs[key].first)
     }
 }
   }
@@ -1187,7 +1533,9 @@ for (var key in verbs){
   input.value='';
   msgHidden=true;
   console.log(preferencesResults);
+  console.log(randomPronoun)
 };
+
 
 
 
@@ -1237,22 +1585,50 @@ function getVerbAnswer(){
     if(verbAnswer[i].checked){
       preferencesResults.unshift(verbAnswer[i].value);
     };
-    if(preferencesResults.length>3){
-      preferencesResults.length = 3;
+    if(subjunctiveSettingsButton.classList.contains('active')){
+  preferencesResults[3]='subjunctive'
+    }
+    if(indicativeSettingsButton.classList.contains('active')){
+      preferencesResults[3]='indicative'
+        }
+    if(preferencesResults.length>4){
+      preferencesResults.length = 4;
     }
   }
 msgHidden = false;
 reset();
 openSidebarLeft();
 }
-
 preferencesSubmitButton.addEventListener('click', getVerbAnswer);
+// get INDICATIVE radio input
+var indicativePreferencesSubmitButton = document.getElementById('indicativePreferencesSubmitButton')
+var indicativeVerbAnswer = document.getElementsByClassName('indicative-input');
+function getIndicativeVerbAnswer(){
+  for (let i = 0; i < indicativeVerbAnswer.length; i++) {
+    if(indicativeVerbAnswer[i].checked){
+      preferencesResults.unshift(indicativeVerbAnswer[i].value);
+    };
+    if(subjunctiveSettingsButton.classList.contains('active')){
+  preferencesResults[3]='subjunctive'
+    }
+    if(indicativeSettingsButton.classList.contains('active')){
+      preferencesResults[3]='indicative'
+        }
+    if(preferencesResults.length>4){
+      preferencesResults.length = 4;
+    }
+  }
+msgHidden = false;
+reset();
+openSidebarLeft();
+}
+indicativePreferencesSubmitButton.addEventListener('click', getIndicativeVerbAnswer);
 //change tense settings
 var indicativeSettings = document.getElementById('indicative-settings');
 var subjunctiveSettings = document.getElementById('subjunctive-settings');
 var tenseSettingsButtons = document.getElementsByClassName('tense-settings-button');
-var indicativeSettingsButton = document.getElementById('indicative-button');
-var subjunctiveSettingsButton = document.getElementById('subjunctive-button');
+var indicativeSettingsButton = document.getElementById('indicative');
+var subjunctiveSettingsButton = document.getElementById('subjunctive');
 
 indicativeSettings.style.display='none';
 
