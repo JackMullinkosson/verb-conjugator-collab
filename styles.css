@@ -77,9 +77,6 @@ body {
     display: none;
   }
 
-
-
-
 .tense-settings-button{
   margin-top: 20px;
   margin-right: 5%;
@@ -236,31 +233,35 @@ border: 1px solid rgba(238, 241, 247, .9);
     font-weight: bold;
 }
 
-@media (max-width: 1024px) {
-    .cheat-sheet-text{
-        margin-top: 60px;;
-    }
-    #msg{
-        margin-top:20px;
-    }
-
+.indicative-grid {
+  grid-template-columns:20% 20% 20% 20%;
 }
 
- @media (max-width: 425px) {
-    #responsive-buttons{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        
-    }
-  .tense-button{
-    margin-right: 50px;
-    width: 67px;
-  }
-  .cheat-sheet-text{
-    margin-top: 100px;
-  }
-  #response{
-    margin-top: 20px;
-  }
- }
+#indicative-cheat-sheet-present, #indicative-cheat-sheet-perfect, #indicative-cheat-sheet-imperfect, #indicative-cheat-sheet-conditional {
+  display: none;
+}
+
+.indicative-cheat-sheet-buttons {
+  margin-top: 20px;
+  margin-right: 5%;
+  margin-left:5%;
+  user-select:none;
+  border-radius: 4px;
+  background-color:rgba(238, 241, 247, .9);
+  border: 0px;
+  padding: 2%;
+  color: black;
+  word-wrap: break-word;
+  flex-basis:100%;
+  display: none;
+}
+
+.indicative-cheat-sheet-buttons:hover{
+  cursor: pointer;
+  border: 1px solid rgba(238, 241, 247, .9);
+}
+
+#indicative-imperfect-cheat-sheet-button{
+margin-left: -100px;
+}
+
