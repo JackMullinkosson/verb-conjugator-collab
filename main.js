@@ -1398,8 +1398,9 @@ verbs.indAllRegCond.infinitive=verbs.indFirstRegCond.infinitive
 verbs.indAllBothCond.infinitive=verbs.indFirstBothCond.infinitive
 
 
-
-
+//select input on page load
+input.focus();
+input.select();
 
 //contains all function to check preferences results
 function containsAll(arr, values) {
@@ -1464,7 +1465,6 @@ for (var key in verbs){
     randomPronoun=Math.floor(Math.random()*(verbs[key].pronounNumberMin))+verbs[key].pronounNumberMax
     var randomSpecializedNumber=Math.floor(Math.random()*verbs[key].infinitive.length)
     infinitiveText.textContent=verbs[key].infinitive[randomSpecializedNumber]
-    console.log(randomPronoun)
     if (preferencesResults[0] !== 'allPersons'){
     correctAnswer = verbs[key].conjugated[randomSpecializedNumber]
     }
@@ -1511,19 +1511,15 @@ for (var key in verbs){
     infinitiveText.textContent=verbs[key].infinitive[randomSpecializedNumber]
   if (randomPronoun>4 && randomPronoun<8){
     correctAnswer=verbs[key].second[randomSpecializedNumber]
-    console.log(verbs[key].second)
     }
     else if(randomPronoun>7){
       correctAnswer=verbs[key].third[randomSpecializedNumber]
-      console.log(verbs[key].third)
     }
-    else if(randomPronoun>0 && randomPronoun<5){
+    else if(randomPronoun>0 && randomPronoun<5 && preferencesResults[3] === 'indicative'){
       correctAnswer=verbs[key].voce[randomSpecializedNumber]
-      console.log(verbs[key].voce)
     }
     else{
      correctAnswer=verbs[key].first[randomSpecializedNumber]
-     console.log(verbs[key].first)
     }
 }
   }
@@ -1533,10 +1529,10 @@ for (var key in verbs){
   input.value='';
   msgHidden=true;
   console.log(preferencesResults);
-  console.log(randomPronoun)
 };
 
 
+playAgain.addEventListener('click', reset);
 
 
 //Spacebar trigger reset
@@ -1629,9 +1625,7 @@ var subjunctiveSettings = document.getElementById('subjunctive-settings');
 var tenseSettingsButtons = document.getElementsByClassName('tense-settings-button');
 var indicativeSettingsButton = document.getElementById('indicative');
 var subjunctiveSettingsButton = document.getElementById('subjunctive');
-
 indicativeSettings.style.display='none';
-
 function changeTenseSettings(e){
   subjunctiveSettingsButton.classList.remove('active')
   indicativeSettingsButton.classList.remove('active')
@@ -1640,17 +1634,14 @@ function changeTenseSettings(e){
 for (let i = 0; i < tenseSettingsButtons.length; i++) {
   tenseSettingsButtons[i].addEventListener('click',changeTenseSettings);
 }
-
 function changeTenseSettingsToIndicative(){
   subjunctiveSettings.style.display='none';
   indicativeSettings.style.display='block';
 }
-
 function changeTenseSettingsToSubjunctive(){
   subjunctiveSettings.style.display='block';
   indicativeSettings.style.display='none';
 }
-
 subjunctiveSettingsButton.addEventListener('click', changeTenseSettingsToSubjunctive)
 indicativeSettingsButton.addEventListener('click', changeTenseSettingsToIndicative)
 
@@ -1662,42 +1653,134 @@ var tenseButtons=document.getElementsByClassName('tense-button');
 var cheatSheetImperfect = document.getElementById('cheat-sheet-imperfect');
 var cheatSheetPresent = document.getElementById('cheat-sheet-present');
 var cheatSheetFuture = document.getElementById('cheat-sheet-future');
-
 cheatSheetImperfect.style.display='none';
 cheatSheetFuture.style.display='none';
-
 function changeCheatSheet(e){
   firstTenseButton.classList.remove('active')
   middleTenseButton.classList.remove('active')
   lastTenseButton.classList.remove('active')
   e.target.classList.add('active')
-
 } 
 for (let i = 0; i < tenseButtons.length; i++) {
   tenseButtons[i].addEventListener('click',changeCheatSheet);
 }
-
 function changeCheatSheetToImperfect(){
   cheatSheetPresent.style.display='none';
   cheatSheetFuture.style.display='none';
   cheatSheetImperfect.style.display='block';
 }
-
 function changeCheatSheetToPresent(){
   cheatSheetPresent.style.display='block';
   cheatSheetFuture.style.display='none';
   cheatSheetImperfect.style.display='none';
 }
-
 function changeCheatSheetToFuture(){
   cheatSheetPresent.style.display='none';
   cheatSheetFuture.style.display='block';
   cheatSheetImperfect.style.display='none';
 }
-
 firstTenseButton.addEventListener('click', changeCheatSheetToImperfect);
 middleTenseButton.addEventListener('click', changeCheatSheetToPresent);
 lastTenseButton.addEventListener('click', changeCheatSheetToFuture);
 
+//change cheat sheet to indicative
+var indImpChShButt = document.getElementById('indicative-imperfect-cheat-sheet-button')
+var indPerfChShButt = document.getElementById('indicative-perfect-cheat-sheet-button')
+var indPresChShButt = document.getElementById('indicative-present-cheat-sheet-button')
+var indCondChShButt = document.getElementById('indicative-conditional-cheat-sheet-button')
+var indChShButts = document.getElementsByClassName('indicative-cheat-sheet-buttons')
+var indChShGetter = document.getElementById('indicative-cheat-sheet')
+var subjChShGetter = document.getElementById('subjunctive-cheat-sheet')
+var indChShPres = document.getElementById('indicative-cheat-sheet-present')
+var indChShImp = document.getElementById('indicative-cheat-sheet-imperfect')
+var indChShPerf = document.getElementById('indicative-cheat-sheet-perfect')
+var indChShCond = document.getElementById('indicative-cheat-sheet-conditional')
 
+for (let i = 0; i < indChShButts.length; i++) {
+  indChShButts[i].style.display='none';
+}
+indChShPres.style.display='none';
+function getIndChSh() {
+  indImpChShButt.style.display='block';
+  indPerfChShButt.style.display='block';
+  indPresChShButt.style.display='block';
+  indCondChShButt.style.display='block';
+  indChShPres.style.display='block';
+  cheatSheetPresent.style.display='none';
+  cheatSheetFuture.style.display='none';
+  cheatSheetImperfect.style.display='none';
+  firstTenseButton.style.display='none';
+  middleTenseButton.style.display='none';
+  lastTenseButton.style.display='none';
+}
 
+function getSubjChSh() {
+  indImpChShButt.style.display='none';
+  indPerfChShButt.style.display='none';
+  indPresChShButt.style.display='none';
+  indCondChShButt.style.display='none';
+  indChShPres.style.display='none';
+  indChShPerf.style.display='none';
+  indChShImp.style.display='none';
+  indChShCond.style.display='none';
+  cheatSheetPresent.style.display='block';
+  firstTenseButton.style.display='block';
+  middleTenseButton.style.display='block';
+  lastTenseButton.style.display='block';
+}
+subjChShGetter.addEventListener('click', getSubjChSh)
+
+indChShGetter.addEventListener('click',getIndChSh)
+function changeChShMode(e){
+  indChShGetter.classList.remove('active')
+  subjChShGetter.classList.remove('active')
+  e.target.classList.add('active')
+}
+
+indChShGetter.addEventListener('click', changeChShMode)
+subjChShGetter.addEventListener('click', changeChShMode)
+
+indImpChShButt.addEventListener('click', function(e){
+  indChShImp.style.display='block';
+  indChShPres.style.display='none';
+  indChShPerf.style.display='none';
+  indChShCond .style.display='none';
+  indImpChShButt.classList.remove('active')
+  indPresChShButt.classList.remove('active')
+  indPerfChShButt.classList.remove('active')
+  indCondChShButt.classList.remove('active')
+  e.target.classList.add('active')
+})
+indPerfChShButt.addEventListener('click', function(e){
+  indChShImp.style.display='none';
+  indChShPres.style.display='none';
+  indChShPerf.style.display='block';
+  indChShCond .style.display='none';
+  indImpChShButt.classList.remove('active')
+  indPresChShButt.classList.remove('active')
+  indPerfChShButt.classList.remove('active')
+  indCondChShButt.classList.remove('active')
+  e.target.classList.add('active')
+})
+indPresChShButt.addEventListener('click', function(e){
+  indChShImp.style.display='none';
+  indChShPres.style.display='block';
+  indChShPerf.style.display='none';
+  indChShCond .style.display='none';
+  indImpChShButt.classList.remove('active')
+  indPresChShButt.classList.remove('active')
+  indPerfChShButt.classList.remove('active')
+  indCondChShButt.classList.remove('active')
+  e.target.classList.add('active')
+})
+indCondChShButt.addEventListener('click', function(e){
+  indChShImp.style.display='none';
+  indChShPres.style.display='none';
+  indChShPerf.style.display='none';
+  indChShCond .style.display='block';
+  indImpChShButt.classList.remove('active')
+  indPresChShButt.classList.remove('active')
+  indPerfChShButt.classList.remove('active')
+  indCondChShButt.classList.remove('active')
+  e.target.classList.add('active')
+})
