@@ -19,8 +19,9 @@ var verbSelected = document.getElementById('verbSelected');
 verbSelected.innerHTML = 'Verb tense: Subjunctive Present'; 
 var preferencesSubmitButton = document.getElementById('preferencesSubmitButton');
 
+console.log('hello')
 
-
+//something should forsure change here
 //OBJECTS
 var verbs = {
 firstIrregImp: {
@@ -678,7 +679,7 @@ indThirdIrregPres: {
   pronounNumberMax: pronounList.length-1,
   tense: 'present',
   regularity: 'irregular',
-  conjugated: ['vamos', 'somos', 'damos', 'dizemos', 'fazemos', 'trazemos', 'podemos', 'temos', 'vimos', 'pomos', 'lemos', 'vemos', 'caímos', 'fugimos', 'rimos', 'subimos', 'cabemos', 'queremos', 'sabemos', 'dormimos', 'medimos', 'ouvimos', 'pedimos', 'seguimos', 'servimos', 'sentimos', 'valemos', 'requeremos', 'havemos'],
+  conjugated: ['vamos', 'somos', 'estamos', 'damos', 'dizemos', 'fazemos', 'trazemos', 'podemos', 'temos', 'vimos', 'pomos', 'lemos', 'vemos', 'caímos', 'saímos', 'cremos', 'fugimos', 'rimos', 'subimos', 'cabemos', 'queremos', 'sabemos', 'dormimos', 'medimos', 'ouvimos', 'pedimos', 'perdemos', 'seguimos', 'servimos', 'sentimos', 'valemos', 'requeremos', 'havemos'],
   infinitive: [],
 },
 indFirstRegPres: {
@@ -1106,13 +1107,11 @@ verbs.firstRegPres.conjugated = verbs.firstRegPres.infinitive.map((word) =>{
 verbs.secondRegPres.conjugated = verbs.firstRegPres.conjugated.map((word) => 
   word += 'm'
 );
-verbs.thirdRegPres.conjugated = verbs.firstRegPres.infinitive.map((word) => {
-  word = word.slice(1,word.length-2)
+verbs.thirdRegPres.conjugated = verbs.firstRegPres.conjugated.map((word) => 
   word += 'mos'
-  return word
-});
+);
 
-
+console.log(verbs.indThirdIrregPres.conjugated)
 verbs.firstBothPres.infinitive = verbs.firstRegImp.infinitive.concat(verbs.firstIrregPres.infinitive);
 verbs.secondBothPres.infinitive = verbs.firstBothPres.infinitive
 verbs.thirdBothPres.infinitive = verbs.firstBothPres.infinitive
