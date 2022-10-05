@@ -753,7 +753,7 @@ indSecondBothPres: {
 },
 indThirdBothPres: {
   mode: 'indicative',
-  pronoun: 'firstPerson',
+  pronoun: 'thirdPerson',
   pronounNumberMin: 1,
   pronounNumberMax: pronounList.length-1,
   tense: 'present',

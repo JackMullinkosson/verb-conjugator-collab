@@ -1,271 +1,267 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background: #D5D9E3;
-    color: #141c3a;
-    overflow: hidden;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #d5d9e3;
+  color: #141c3a;
+  overflow: hidden;
+}
 
-  .title {
-    font-size: 36px;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    padding: 0;
-    color: #141c3a;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
-  }
-  
-  #demo {
-    text-align: center;
-    font-size: 18px;
-    margin-top: 15px;
-    color: #141c3a;
-    letter-spacing: 1px;
-    font-style: italic;
-  }
-  #verbSelected {
-    text-align: center;
-  }
+.title {
+  font-size: 36px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 0;
+  color: #141c3a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
 
-  section{
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    gap: 1%;
-  }
-  .side{
-    display: flex;
-    flex-direction: column;
-    
-  }
-  #box-left{
-    margin-right:20px;
-    margin-left: 60px;
-  }
- 
-  .sidebar-button{
-   margin-top: 15px;
-   border-radius: 4px;
-   background-color: #141c3a;
-   width: 50%;
-   border: 0px;
-   padding: 4%;
-   font-size: 1em;
-   color:white;
-   word-wrap: break-word;
-   justify-content: center;
-   align-items: center;
-  }
+#demo {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 15px;
+  color: #141c3a;
+  letter-spacing: 1px;
+  font-style: italic;
+}
+#verbSelected {
+  text-align: center;
+}
 
-  .sidebar-button:hover {
-    border: 1.5px solid antiquewhite;
-    cursor: pointer;
+section {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 1%;
+}
+.side {
+  display: flex;
+  flex-direction: column;
+}
+#box-left {
+  margin-right: 20px;
+  margin-left: 60px;
+}
 
-  }
+.sidebar-button {
+  margin-top: 15px;
+  border-radius: 4px;
+  background-color: #141c3a;
+  width: 50%;
+  border: 0px;
+  padding: 4%;
+  font-size: 1em;
+  color: white;
+  word-wrap: break-word;
+  justify-content: center;
+  align-items: center;
+}
 
-  .sidebar label{
-    font-size: small;
-  }
+.sidebar-button:hover {
+  border: 1.5px solid antiquewhite;
+  cursor: pointer;
+}
 
-#sidebar-left{
-    display: none;
-  }
-#indicative-settings{
-    display: none;
-  }
+.sidebar label {
+  font-size: small;
+}
 
-.tense-settings-button{
+#sidebar-left {
+  display: none;
+}
+#indicative-settings {
+  display: none;
+}
+
+.tense-settings-button {
   margin-top: 20px;
   margin-right: 5%;
-  margin-left:5%;
-  user-select:none;
+  margin-left: 5%;
+  user-select: none;
   border-radius: 4px;
-  background-color:rgba(238, 241, 247, .9);
+  background-color: rgba(238, 241, 247, 0.9);
   border: 0px;
   padding: 2%;
   color: black;
   word-wrap: break-word;
-  
 }
 .tense-settings-button:hover {
-cursor: pointer;
-border: 1px solid rgba(238, 241, 247, .9);
+  cursor: pointer;
+  border: 1px solid rgba(238, 241, 247, 0.9);
 }
 
-  #sent-one, #sent-two, #response {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-  
-  }
-
- #sent-one, #infinitive, #reponse{
-    font-size: larger;
- } 
-
-#infinitive  {
-    color: #EA526F;
+#sent-one,
+#sent-two,
+#response {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#response{
-    border-radius: 4px;
-    padding: .5%;
-    margin: 1%;
-    background-color:rgba(255, 255, 255, 0.9);
-    border: 1px solid #141c3a;
+#sent-one,
+#infinitive,
+#reponse {
+  font-size: larger;
 }
- 
-#playAgain{
-    display: none;
-    background-color: #141c3a;
-    color: white;
-  }
-.game-button{
-    user-select:none;
-    border-radius: 4px;
-    background-color:rgba(238, 241, 247, .9);
-    border: 0px;
-    padding: 2%;
-    color: black;
-    word-wrap: break-word;
-    flex-basis:100%;
-    margin-top: 15px;
-    
+
+#infinitive {
+  color: #ea526f;
+}
+
+#response {
+  border-radius: 4px;
+  padding: 0.5%;
+  margin: 1%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #141c3a;
+}
+
+#playAgain {
+  display: none;
+  background-color: #141c3a;
+  color: white;
+}
+.game-button {
+  user-select: none;
+  border-radius: 4px;
+  background-color: rgba(238, 241, 247, 0.9);
+  border: 0px;
+  padding: 2%;
+  color: black;
+  word-wrap: break-word;
+  flex-basis: 100%;
+  margin-top: 15px;
 }
 
 .game-button:hover {
-    border: 1px solid rgba(238, 241, 247, .9);
-    cursor: pointer;
-
-  }
-.middle{
-    width: 40%;
+  border: 1px solid rgba(238, 241, 247, 0.9);
+  cursor: pointer;
 }
-.side{
-    width: 30%;
+.middle {
+  width: 40%;
 }
-
-#sidebar-right{
-    display: none;
-    margin-left:-10%;
+.side {
+  width: 30%;
 }
 
-.tense-button{
-    margin-top: 20px;
-    margin-right: 5%;
-    margin-left:5%;
-    user-select:none;
-    border-radius: 4px;
-    background-color:rgba(238, 241, 247, .9);
-    border: 0px;
-    padding: 2%;
-    color: black;
-    word-wrap: break-word;
-    flex-basis:100%;
+#sidebar-right {
+  display: none;
+  margin-left: -10%;
 }
 
-.tense-button:hover{
-    cursor: pointer;
-    border: 1px solid rgba(238, 241, 247, .9);
+.tense-button {
+  margin-top: 20px;
+  margin-right: 5%;
+  margin-left: 5%;
+  user-select: none;
+  border-radius: 4px;
+  background-color: rgba(238, 241, 247, 0.9);
+  border: 0px;
+  padding: 2%;
+  color: black;
+  word-wrap: break-word;
+  flex-basis: 100%;
 }
 
-#first-tense-button{
-    margin-left: -75px;
+.tense-button:hover {
+  cursor: pointer;
+  border: 1px solid rgba(238, 241, 247, 0.9);
+}
+
+#first-tense-button {
+  margin-left: -75px;
 }
 .active {
-    background-color:rgba(238, 241, 247, .1) !important;
-    border: 1px solid rgba(238, 241, 247, .9); 
-    color: rgb(0,0,0,.8);  
-    font-weight: bold;
+  background-color: rgba(238, 241, 247, 0.1) !important;
+  border: 1px solid rgba(238, 241, 247, 0.9);
+  color: rgb(0, 0, 0, 0.8);
+  font-weight: bold;
 }
-.active:hover{
-  cursor:auto;
+.active:hover {
+  cursor: auto;
 }
-.cheat-sheet-text{
-    margin-left: -20%;
-    width: 90%;
-    margin-top: 20px;
-}
-
-
-.grid{
-    display: grid;
-    grid-template-columns:20% 30% 30%;
-    font-size: medium;
-    margin-left: -20%;
-    margin-top: 5%;
-   
+.cheat-sheet-text {
+  margin-left: -20%;
+  width: 90%;
+  margin-top: 20px;
 }
 
-#imperfect-grid{
-    grid-template-columns:20% 20% 20% 20%;
+.grid {
+  display: grid;
+  grid-template-columns: 20% 30% 30%;
+  font-size: medium;
+  margin-left: -20%;
+  margin-top: 5%;
 }
 
-
+#imperfect-grid {
+  grid-template-columns: 20% 20% 20% 20%;
+}
 
 .grid-item {
-    padding: 5px;
+  padding: 5px;
 }
 
-.cl-left{
-    font-size: smaller;
-    word-wrap: break-word;
-    border-right: 1px solid #141c3a;
-    border-top: 1px solid #141c3a;
-    }
-.cl-left-top{
-    border-right: 1px solid #141c3a;
+.cl-left {
+  font-size: smaller;
+  word-wrap: break-word;
+  border-right: 1px solid #141c3a;
+  border-top: 1px solid #141c3a;
 }
-
+.cl-left-top {
+  border-right: 1px solid #141c3a;
+}
 
 .row {
-    border-top: 1px solid #141c3a;
+  border-top: 1px solid #141c3a;
 }
 
-.cl-mid{
-    border-right: 1px solid #141c3a;
+.cl-mid {
+  border-right: 1px solid #141c3a;
 }
 
-.grid-head{
-    font-weight: bold;
+.grid-head {
+  font-weight: bold;
 }
 
 .indicative-grid {
-  grid-template-columns:20% 20% 20% 20%;
+  grid-template-columns: 20% 20% 20% 20%;
 }
 
-#indicative-cheat-sheet-present, #indicative-cheat-sheet-perfect, #indicative-cheat-sheet-imperfect, #indicative-cheat-sheet-conditional {
+#indicative-cheat-sheet-present,
+#indicative-cheat-sheet-perfect,
+#indicative-cheat-sheet-imperfect,
+#indicative-cheat-sheet-conditional {
   display: none;
 }
-
-
 
 .indicative-cheat-sheet-buttons {
   margin-top: 20px;
   margin-right: 5%;
-  margin-left:5%;
-  user-select:none;
+  margin-left: 5%;
+  user-select: none;
   border-radius: 4px;
-  background-color:rgba(238, 241, 247, .9);
+  background-color: rgba(238, 241, 247, 0.9);
   border: 0px;
   padding: 2%;
   color: black;
   word-wrap: break-word;
-  
 }
 
-.indicative-cheat-sheet-buttons:hover{
+.indicative-cheat-sheet-buttons:hover {
   cursor: pointer;
-  border: 1px solid rgba(238, 241, 247, .9);
+  border: 1px solid rgba(238, 241, 247, 0.9);
 }
 
-#indicative-imperfect-cheat-sheet-button{
-margin-left: -100px;
+#indicative-imperfect-cheat-sheet-button {
+  margin-left: -100px;
 }
 
 #indicative-cheat-sheet-buttons-wrapper {
-  
+  display: flex;
+}
+#responsive-buttons {
+  display: flex;
 }
